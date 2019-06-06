@@ -18,4 +18,4 @@
 
 * [User stories](docs/user-stories.md)
 
-* ![Wireframes](https://github.com/Monjoie11/Sandy/blob/master/docs/Sandy.png)
+* ![Wireframes](docs/Sandy.png)
