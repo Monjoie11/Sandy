@@ -18,4 +18,4 @@
 
 * [User stories](docs/user-stories.md)
 
-* [Wireframes](docs/wire-frames.md)
+* ![Wireframes](docs/Sandy.png)
