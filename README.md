@@ -18,4 +18,4 @@
 
 * [User stories](docs/user-stories.md)
 
-* [Wireframes](docs/Sand.drawio)
+* [Wireframes](docs/Sandy.drawio)
