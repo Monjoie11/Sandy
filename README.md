@@ -12,7 +12,7 @@
 
 * Sandy will need access to your camera and picture gallery (be sure to take a picture of your ssn for safe keeping and store it on your phone). There will be no navigation. Sandy calls the shots. You have been assimilated. She will show you 10 pictures (9 diagnostic 1 malingering test) at start and you will say yes or no to its sandwich verity. After that you will just take a picture (from within the app, the way you put your totally filtered selfie directly into Tinder) and Sandy will guess if its a sandwich or not. If she is wrong, you will be prompted to use your touch screen to circle the sandwich (this will reduce wasted space in memory when making down stream comparison). 
 
-* Users will have the option of reviewing and deletng from the gallery photos stored as sandwiches. Users will also have the option of wiping the data and redoing the setup tutorial (this will initiate a call through the interwebs to reinstall the initial 91 photos).
+* You (the user, I'm sing the second peson because there's no way you won't be using this app after reading about it) will have the option of reviewing and deleting from the gallery photos stored as sandwiches. You will also have the option of wiping the data and redoing the setup tutorial (this will initiate a call through the interwebs to reinstall the initial 91 photos).
 
 * Sandy will also employ an RNG to spit out really clever stuff, either critiquing (mocking) your taste in sandwiches or making ominous threats because she knows you're lying to her. And she always knows when you're lying... always.
 
