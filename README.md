@@ -6,7 +6,7 @@
 
 * The app will use Facebook Sign-In as a means to access and sell your personal information (did I mention we love teenagers?). Users will then be able share their sandwiches on the social interwebs, with planned expansions of the app taking in shared images into Sandy's collective consciousness.
  
-* Sandy will download with a set of 90 images that will be used upon install to learn your sandwich philosophy.For example, is a burrito a sandwich in your world?
+* Sandy will download with a set of 90 images that will be used upon install to learn your sandwich philosophy.For example, is a burrito a sandwich in your world? 
 
 * According to the exhaustive research of Dr. David Nelson, there are 9 major sandwich philosophies. Ten pictures fitting each each philosophy will be downloaded, and the photos matching your type(s) will persist on the device as Sandy's initial learning. Subsequent photos captured by the user and determined to be  sandwiches will also be stored. 
 
