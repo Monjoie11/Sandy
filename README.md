@@ -19,3 +19,5 @@
 * [User stories](docs/user-stories.md)
 
 * ![Wireframes](docs/Sandy.png)
+
+*![WireframesPDF](docs/Sandy.pdf)
