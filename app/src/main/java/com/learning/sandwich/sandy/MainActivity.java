@@ -2,12 +2,20 @@ package com.learning.sandwich.sandy;
 
 import android.os.Bundle;
 import androidx.annotation.NonNull;
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.login.LoginManager;
+import com.facebook.login.LoginResult;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+
 public class MainActivity extends AppCompatActivity {
+
+ CallbackManager callbackManager = CallbackManager.Factory.create();
 
   private TextView mTextMessage;
 
@@ -39,6 +47,34 @@ public class MainActivity extends AppCompatActivity {
     mTextMessage = (TextView) findViewById(R.id.message);
     BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
     navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+
+
+    callbackManager = CallbackManager.Factory.create();
+
+    LoginManager.getInstance().registerCallback(callbackManager,
+        new FacebookCallback<LoginResult>() {
+
+
+          @Override
+          public void onSuccess(LoginResult loginResult) {
+            // App code
+          }
+
+          @Override
+          public void onCancel() {
+            // App code
+          }
+
+          @Override
+          public void onError(FacebookException exception) {
+            // App code
+          }
+
+        });
+
+
   }
+
 
 }
