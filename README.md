@@ -18,6 +18,5 @@
 
 * [User stories](docs/user-stories.md)
 
-* ![Wireframes](docs/Sandy.png)
+* ![Wireframes](docs/Sandy Wired.png)
 
-*![WireframesPDF](docs/Sandy.pdf)
