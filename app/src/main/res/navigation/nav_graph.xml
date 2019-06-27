@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/nav_graph"
+  app:startDestination="@id/responseFragment">
+
+  <fragment
+    android:id="@+id/responseFragment"
+    android:name="com.learning.sandwich.sandy.ResponseFragment"
+    android:label="response_fragment"
+    tools:layout="@layout/response_fragment">
+    <action
+      android:id="@+id/action_responseFragment_to_sandwichImageFragment"
+      app:destination="@id/sandwichImageFragment"/>
+  </fragment>
+  <fragment
+    android:id="@+id/sandwichImageFragment"
+    android:name="com.learning.sandwich.sandy.SandwichImageFragment"
+    android:label="sandwich_fragment"
+    tools:layout="@layout/sandwich_fragment">
+    <action
+      android:id="@+id/action_sandwichImageFragment_to_responseFragment"
+      app:destination="@id/responseFragment"
+      />
+  </fragment>
+</navigation>

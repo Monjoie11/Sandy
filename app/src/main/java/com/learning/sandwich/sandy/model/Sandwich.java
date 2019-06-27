@@ -8,6 +8,8 @@ import java.io.Serializable;
 @Entity
 public class Sandwich implements Serializable {
 
+  private static final long serialVersionUID = 1L;
+
   @PrimaryKey
   @ColumnInfo(name = "sandwich_id")
   private long sandwichId;

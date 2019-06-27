@@ -3,9 +3,12 @@ package com.learning.sandwich.sandy.model;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+import java.io.Serializable;
 
 @Entity
-public class Response {
+public class Response implements Serializable {
+
+  private static final long serialVersionUID = 1L;
 
   @ColumnInfo(name = "response_id")
   @PrimaryKey

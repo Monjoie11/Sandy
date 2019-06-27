@@ -20,7 +20,7 @@ public class SandwichImageFragment extends Fragment {
   @Override
   public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
       @Nullable Bundle savedInstanceState) {
-    return inflater.inflate(R.layout._fragment, container, false);
+    return inflater.inflate(R.layout.sandwich_fragment, container, false);
   }
 
   @Override
