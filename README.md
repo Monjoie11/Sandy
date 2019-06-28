@@ -16,6 +16,9 @@
 
 * Sandy will also employ an RNG to spit out really clever stuff, either critiquing (mocking) your taste in sandwiches or making ominous threats because she knows you're lying to her. And she always knows when you're lying... always.
 
+##### Hot off the Presses: Read the Milestone 2 [State of the Sandwich Address](docs/milestone-2.md)
+
+
 * [User stories](docs/user-stories.md)
 
 * ![Wireframes](docs/Sandy Wired.png)

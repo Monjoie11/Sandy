@@ -22,7 +22,7 @@ public class ResponseFragment extends Fragment {
 
   private ImageButton yesButton;
   private ImageButton noButton;
-  private ResponseViewModel mViewModel;
+//  private ResponseViewModel mViewModel;
   private TextView responseText;
   private Context context;
   private SharedPreferences sharedPref;
@@ -82,7 +82,7 @@ public class ResponseFragment extends Fragment {
   @Override
   public void onActivityCreated(@Nullable Bundle savedInstanceState) {
     super.onActivityCreated(savedInstanceState);
-    mViewModel = ViewModelProviders.of(this).get(ResponseViewModel.class);
+  //  mViewModel = ViewModelProviders.of(this).get(ResponseViewModel.class);
     // TODO: Use the ViewModel
   }
 

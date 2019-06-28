@@ -12,5 +12,8 @@ public class SandyApplication extends Application {
     super.onCreate();
     Stetho.initializeWithDefaults(this);
     instance = this;
+    new Thread(() -> {
+      SandyDatabase.getInstance(this).sandwichDao().delete();
+    }).start();
   }
 }

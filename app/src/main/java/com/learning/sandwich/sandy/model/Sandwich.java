@@ -10,7 +10,7 @@ public class Sandwich implements Serializable {
 
   private static final long serialVersionUID = 1L;
 
-  @PrimaryKey
+  @PrimaryKey(autoGenerate = true)
   @ColumnInfo(name = "sandwich_id")
   private long sandwichId;
 

@@ -17,11 +17,11 @@ public class DatabaseService extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-      db.execSQL("CREATE TABLE movies ("
+      db.execSQL("CREATE TABLE sandwiches ("
           + "sandwich_id INTEGER PRIMARY KEY, "
           + "sandwich_style INTEGER,"
           + "machine_eat INTEGER,"
-          + "file_name STRING,"
+          + "file_name TEXT,"
           + "human_eat INTEGER) " );
     }
 

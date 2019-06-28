@@ -2,6 +2,7 @@ package com.learning.sandwich.sandy.model.dao;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
+import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import com.learning.sandwich.sandy.model.Sandwich;
@@ -22,5 +23,7 @@ public interface SandwichDao {
   @Query("SELECT * FROM sandwich WHERE sandwich_id = :sandwichId")
   LiveData<Sandwich> findById(Long sandwichId);
 
+  @Delete
+  int delete(Sandwich... sandwiches);
 
 }

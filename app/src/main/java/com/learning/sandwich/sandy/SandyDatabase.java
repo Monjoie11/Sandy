@@ -7,6 +7,7 @@ import androidx.room.DatabaseConfiguration;
 import androidx.room.InvalidationTracker;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+import androidx.sqlite.db.SupportSQLiteDatabase;
 import androidx.sqlite.db.SupportSQLiteOpenHelper;
 import com.learning.sandwich.sandy.model.Response;
 import com.learning.sandwich.sandy.model.Sandwich;
@@ -24,12 +25,24 @@ public abstract class SandyDatabase extends RoomDatabase {
 
   public static SandyDatabase getInstance(Context context){
     if(INSTANCE == null){
-      INSTANCE = Room
-          .databaseBuilder(context.getApplicationContext(),SandyDatabase.class, "sandwiches_room").build();
+      INSTANCE = Room.databaseBuilder(context.getApplicationContext(),SandyDatabase.class, "sandwiches_room")
+          .addCallback(new Callback() {
+            @Override
+            public void onCreate(@NonNull SupportSQLiteDatabase db) {
+              super.onCreate(db);
+              new Thread(() -> {
+                Sandwich sandwich = new Sandwich();
+                sandwich.setFileName("/app/src/main/res/drawable/test_image1.png");
+                sandwich.setMachineEat(true);
+                sandwich.setSandwichStyle(0);
+                INSTANCE.sandwichDao().insert(sandwich);
+              }).start();
+            }
+          })
+          .build();
     }
     return INSTANCE;
   }
-
 
 
 }
