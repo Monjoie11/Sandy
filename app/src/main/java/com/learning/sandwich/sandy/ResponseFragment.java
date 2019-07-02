@@ -35,8 +35,15 @@ public class ResponseFragment extends Fragment {
   private Context context;
   private SharedPreferences sharedPref;
   private Boolean tutorialComplete;
-  SharedPreferences.Editor editor;
-  int tutorialPosition;
+  private SharedPreferences.Editor editor;
+  private int tutorialPosition = 0;
+  final int[] imageArray = {R.drawable.test_image1, R.drawable.test_image2,
+      R.drawable.test_image3,
+      R.drawable.test_image4, R.drawable.test_image5, R.drawable.test_image6,
+      R.drawable.test_image7,
+      R.drawable.test_image8, R.drawable.test_image9, R.drawable.test_image10,
+      R.drawable.test_image11,
+      R.drawable.test_image12};
 
 
   public ResponseFragment() {
@@ -64,25 +71,27 @@ public class ResponseFragment extends Fragment {
     responseImage = view.findViewById(R.id.captured_sandwich);
     Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.test_image1);
     responseImage.setImageBitmap(bmp);
-    responseText = view.findViewById(R.id.response_text);//I'm going to attempt to use some logic to differentiate the functions of the buttons:
+    noButton = view.findViewById(R.id.no_button);
+    noButton.setOnClickListener(v -> {
+      Toast.makeText(context, "Watch where you put that finger. I said touch my buns.",
+          Toast.LENGTH_LONG).show();
+      // TODO Do other stuff
+    });
+    yesButton = view.findViewById(R.id.yes_button);
+    yesButton.setOnClickListener(v -> {
+      // Do some stuff; while that's happening, hide the buttons.
+      yesButton.setVisibility(View.INVISIBLE);
+      noButton.setVisibility(View.INVISIBLE);
+      responseText.setText(randomTutorialQuestions());
+      if (tutorialPosition < 12 && !sharedPref.getBoolean(getString(R.string.saved_tutorial_complete_key), false)) {
+        doTutorial(tutorialPosition++);
+      }
+      // Tutorial is done.
+    });
+    responseText = view.findViewById(
+        R.id.response_text);//I'm going to attempt to use some logic to differentiate the functions of the buttons:
     if (!sharedPref.getBoolean(getString(R.string.saved_tutorial_complete_key), false)) {
       responseText.setText(R.string.first_screen);
-      ImageButton yesButton = view.findViewById(R.id.yes_button);
-      yesButton.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View viewYes1) {
-          doTutorial();
-        }
-      });
-
-      ImageButton noButton = view.findViewById(R.id.no_button);
-      noButton.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View viewNo1) {
-          Toast.makeText(context, "Watch where you put that finger. I said touch my buns.",
-              Toast.LENGTH_LONG).show();
-        }
-      });// I got this to work using that handy context I created.
     }
 
     return view;
@@ -101,29 +110,11 @@ public class ResponseFragment extends Fragment {
     return answers[rng.nextInt(answers.length)];
   }
 
-  private void doTutorial() {
-    final int[] imageArray = {R.drawable.test_image1, R.drawable.test_image2, R.drawable.test_image3,
-        R.drawable.test_image4, R.drawable.test_image5, R.drawable.test_image6, R.drawable.test_image7,
-        R.drawable.test_image8, R.drawable.test_image9, R.drawable.test_image10, R.drawable.test_image11,
-        R.drawable.test_image12};
-
-    ImageButton yesButton = getView().findViewById(R.id.yes_button);
-//    for(tutorialPosition = 0; tutorialPosition <= 12; ) {
-//      if (tutorialPosition < 12) {
-        responseImage = getView().findViewById(R.id.captured_sandwich);
-        Bitmap bmp = BitmapFactory.decodeResource(getResources(), imageArray[tutorialPosition]);
-        responseImage.setImageBitmap(bmp);
-        yesButton.setOnClickListener(new View.OnClickListener() {
-          @Override
-          public void onClick(View view) {
-            responseText.setText(randomTutorialQuestions());
-            tutorialPosition++;
-          }
-        });
-        //add on no click
-    //  }
-      //change tutorial status to now complete using shared preferences
-   // }
+  private void doTutorial(int position) {
+    Bitmap bmp = BitmapFactory.decodeResource(getResources(), imageArray[position]);
+    responseImage.setImageBitmap(bmp);
+    yesButton.setVisibility(View.VISIBLE);
+    noButton.setVisibility(View.VISIBLE);
   }
 
 
