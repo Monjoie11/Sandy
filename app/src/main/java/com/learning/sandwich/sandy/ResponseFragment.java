@@ -29,15 +29,14 @@ public class ResponseFragment extends Fragment {
   private ImageButton yesButton;
   private ImageButton noButton;
   private Random rng = new Random();
- private ResponseViewModel mViewModel;
+  private ResponseViewModel mViewModel;
   private ImageView responseImage;
   private TextView responseText;
   private Context context;
   private SharedPreferences sharedPref;
   private Boolean tutorialComplete;
   SharedPreferences.Editor editor;
-
-
+  int tutorialPosition;
 
 
   public ResponseFragment() {
@@ -63,7 +62,7 @@ public class ResponseFragment extends Fragment {
       @Nullable Bundle savedInstanceState) {
     final View view = inflater.inflate(R.layout.response_fragment, container, false);
     responseImage = view.findViewById(R.id.captured_sandwich);
-    Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.test_image6);
+    Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.test_image1);
     responseImage.setImageBitmap(bmp);
     responseText = view.findViewById(R.id.response_text);//I'm going to attempt to use some logic to differentiate the functions of the buttons:
     if (!sharedPref.getBoolean(getString(R.string.saved_tutorial_complete_key), false)) {
@@ -72,7 +71,7 @@ public class ResponseFragment extends Fragment {
       yesButton.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View viewYes1) {
-         doTutorial();
+          doTutorial();
         }
       });
 
@@ -93,20 +92,38 @@ public class ResponseFragment extends Fragment {
   @Override
   public void onActivityCreated(@Nullable Bundle savedInstanceState) {
     super.onActivityCreated(savedInstanceState);
-  //  mViewModel = ViewModelProviders.of(this).get(ResponseViewModel.class);
+    //  mViewModel = ViewModelProviders.of(this).get(ResponseViewModel.class);
     // TODO: Use the ViewModel
   }
 
-  private String randomTutorialQuestions(){
+  private String randomTutorialQuestions() {
     String[] answers = getResources().getStringArray(R.array.tutorial_questions);
     return answers[rng.nextInt(answers.length)];
   }
 
-  private void doTutorial(){
-   responseText.setText(randomTutorialQuestions());
-    responseImage = getView().findViewById(R.id.captured_sandwich);
-    Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.test_image2);
-    responseImage.setImageBitmap(bmp);
+  private void doTutorial() {
+    final int[] imageArray = {R.drawable.test_image1, R.drawable.test_image2, R.drawable.test_image3,
+        R.drawable.test_image4, R.drawable.test_image5, R.drawable.test_image6, R.drawable.test_image7,
+        R.drawable.test_image8, R.drawable.test_image9, R.drawable.test_image10, R.drawable.test_image11,
+        R.drawable.test_image12};
+
+    ImageButton yesButton = getView().findViewById(R.id.yes_button);
+//    for(tutorialPosition = 0; tutorialPosition <= 12; ) {
+//      if (tutorialPosition < 12) {
+        responseImage = getView().findViewById(R.id.captured_sandwich);
+        Bitmap bmp = BitmapFactory.decodeResource(getResources(), imageArray[tutorialPosition]);
+        responseImage.setImageBitmap(bmp);
+        yesButton.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+            responseText.setText(randomTutorialQuestions());
+            tutorialPosition++;
+          }
+        });
+        //add on no click
+    //  }
+      //change tutorial status to now complete using shared preferences
+   // }
   }
 
 
