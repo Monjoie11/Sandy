@@ -31,11 +31,14 @@ public abstract class SandyDatabase extends RoomDatabase {
             public void onCreate(@NonNull SupportSQLiteDatabase db) {
               super.onCreate(db);
               new Thread(() -> {
-                Sandwich sandwich = new Sandwich();
-                sandwich.setFileName("/app/src/main/res/drawable/test_image1.png");
-                sandwich.setMachineEat(true);
-                sandwich.setSandwichStyle(0);
-                INSTANCE.sandwichDao().insert(sandwich);
+                for(int i = 1; i < 13; i++) { //TODO Amake sure to expand scope of  for-loop if images added to tutorial
+                  Sandwich sandwich = new Sandwich();
+                  sandwich.setSandwichId(i);
+                  sandwich.setFileName("/app/src/main/res/drawable/test_image" + i + ".png");
+                  sandwich.setMachineEat(true);
+                  sandwich.setSandwichStyle(0);
+                  INSTANCE.sandwichDao().insert(sandwich);
+                }
               }).start();
             }
           })
@@ -43,6 +46,5 @@ public abstract class SandyDatabase extends RoomDatabase {
     }
     return INSTANCE;
   }
-
 
 }

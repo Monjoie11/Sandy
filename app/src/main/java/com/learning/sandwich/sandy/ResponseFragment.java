@@ -2,8 +2,12 @@ package com.learning.sandwich.sandy;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.fragment.app.FragmentManager;
@@ -17,12 +21,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.navigation.Navigation;
 import android.preference.PreferenceManager;
+import java.util.Random;
 
 public class ResponseFragment extends Fragment {
 
+
   private ImageButton yesButton;
   private ImageButton noButton;
-//  private ResponseViewModel mViewModel;
+  private Random rng = new Random();
+ private ResponseViewModel mViewModel;
+  private ImageView responseImage;
   private TextView responseText;
   private Context context;
   private SharedPreferences sharedPref;
@@ -54,6 +62,9 @@ public class ResponseFragment extends Fragment {
   public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
       @Nullable Bundle savedInstanceState) {
     final View view = inflater.inflate(R.layout.response_fragment, container, false);
+    responseImage = view.findViewById(R.id.captured_sandwich);
+    Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.test_image6);
+    responseImage.setImageBitmap(bmp);
     responseText = view.findViewById(R.id.response_text);//I'm going to attempt to use some logic to differentiate the functions of the buttons:
     if (!sharedPref.getBoolean(getString(R.string.saved_tutorial_complete_key), false)) {
       responseText.setText(R.string.first_screen);
@@ -61,8 +72,7 @@ public class ResponseFragment extends Fragment {
       yesButton.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View viewYes1) {
-          Navigation.findNavController(view)
-              .navigate(R.id.action_responseFragment_to_sandwichImageFragment);
+         doTutorial();
         }
       });
 
@@ -79,11 +89,24 @@ public class ResponseFragment extends Fragment {
     return view;
   }
 
+
   @Override
   public void onActivityCreated(@Nullable Bundle savedInstanceState) {
     super.onActivityCreated(savedInstanceState);
   //  mViewModel = ViewModelProviders.of(this).get(ResponseViewModel.class);
     // TODO: Use the ViewModel
+  }
+
+  private String randomTutorialQuestions(){
+    String[] answers = getResources().getStringArray(R.array.tutorial_questions);
+    return answers[rng.nextInt(answers.length)];
+  }
+
+  private void doTutorial(){
+   responseText.setText(randomTutorialQuestions());
+    responseImage = getView().findViewById(R.id.captured_sandwich);
+    Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.test_image2);
+    responseImage.setImageBitmap(bmp);
   }
 
 
@@ -94,6 +117,8 @@ public class ResponseFragment extends Fragment {
   public void setTutorialComplete(Boolean tutorialComplete) {
     this.tutorialComplete = tutorialComplete;
   }
+
+
 }
 
 
