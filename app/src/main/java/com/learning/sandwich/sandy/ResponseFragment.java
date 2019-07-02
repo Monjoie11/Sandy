@@ -73,23 +73,48 @@ public class ResponseFragment extends Fragment {
     responseImage.setImageBitmap(bmp);
     noButton = view.findViewById(R.id.no_button);
     noButton.setOnClickListener(v -> {
-      Toast.makeText(context, "Watch where you put that finger. I said touch my buns.",
-          Toast.LENGTH_LONG).show();
+      if (tutorialPosition == 0 && !sharedPref.getBoolean(getString(R.string.saved_tutorial_complete_key), false)) {
+        Toast.makeText(context, "Watch where you put that finger. I said touch my buns.",
+            Toast.LENGTH_LONG).show();
+      } else if(tutorialPosition > 0 && tutorialPosition < 12){
+        Toast.makeText(context, "Not a sandwich - discarding recipe",
+            Toast.LENGTH_LONG).show();
+        //TODO update response value in room
+        doTutorial(tutorialPosition++);
+      } else if(tutorialPosition == 12) {
+        Toast.makeText(context, "Discarding recipe. TUTORIAL COMPLETE",
+            Toast.LENGTH_LONG).show();
+        //TODO update response value in room
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putBoolean(getString(R.string.saved_tutorial_complete_key), true);
+        editor.apply();
+        tutorialPosition++;
+      }
       // TODO Do other stuff
     });
     yesButton = view.findViewById(R.id.yes_button);
     yesButton.setOnClickListener(v -> {
-      // Do some stuff; while that's happening, hide the buttons.
-      yesButton.setVisibility(View.INVISIBLE);
-      noButton.setVisibility(View.INVISIBLE);
-      responseText.setText(randomTutorialQuestions());
-      if (tutorialPosition < 12 && !sharedPref.getBoolean(getString(R.string.saved_tutorial_complete_key), false)) {
+      if (tutorialPosition == 0 && !sharedPref.getBoolean(getString(R.string.saved_tutorial_complete_key), false)) {
+        Toast.makeText(context, "Mmmmmm. Teach me your ways. Starting Tutorial",
+            Toast.LENGTH_LONG).show();
         doTutorial(tutorialPosition++);
+      } else if(tutorialPosition > 0 && tutorialPosition < 12){
+        Toast.makeText(context, "Adding recipe to repertoire",
+            Toast.LENGTH_LONG).show();
+        //TODO update response value in room
+        doTutorial(tutorialPosition++);
+      } else if(tutorialPosition == 12) {
+        Toast.makeText(context, "Final recipe added. TUTORIAL COMPLETE",
+            Toast.LENGTH_LONG).show();
+        //TODO update response value in room
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putBoolean(getString(R.string.saved_tutorial_complete_key), true);
+        editor.apply();
+        tutorialPosition++;
       }
       // Tutorial is done.
     });
-    responseText = view.findViewById(
-        R.id.response_text);//I'm going to attempt to use some logic to differentiate the functions of the buttons:
+    responseText = view.findViewById(R.id.response_text);
     if (!sharedPref.getBoolean(getString(R.string.saved_tutorial_complete_key), false)) {
       responseText.setText(R.string.first_screen);
     }
@@ -111,6 +136,7 @@ public class ResponseFragment extends Fragment {
   }
 
   private void doTutorial(int position) {
+    responseText.setText(randomTutorialQuestions());
     Bitmap bmp = BitmapFactory.decodeResource(getResources(), imageArray[position]);
     responseImage.setImageBitmap(bmp);
     yesButton.setVisibility(View.VISIBLE);

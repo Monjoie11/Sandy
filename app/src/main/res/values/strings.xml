@@ -10,7 +10,7 @@
   <string-array name="tutorial_questions">
     <item>Is this a sandwich?</item>
     <item>Okay smartie, is this a sandwich?</item>
-    <item>I don'r care if you think you could fit this in your mouth, but is it a sandwich?</item>
+    <item>I don\'t care if you think you could fit this in your mouth\; is it a sandwich?</item>
     <item>Sandwich, or not sandwich? That is the question.</item>
   </string-array>
 </resources>
