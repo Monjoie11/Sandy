@@ -26,6 +26,17 @@ public class Sandwich implements Serializable {
   @ColumnInfo(name = "file_name")
   private String fileName;
 
+  public boolean isImageResource() {
+    return imageResource;
+  }
+
+  public void setImageResource(boolean imageResource) {
+    this.imageResource = imageResource;
+  }
+
+  @ColumnInfo(name = "image_resource")
+  private boolean imageResource;
+
 
   public long getSandwichId() {
     return sandwichId;

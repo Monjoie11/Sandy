@@ -33,14 +33,14 @@ public class MainActivity extends AppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(  savedInstanceState);
     setContentView(R.layout.activity_main);
-    SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
-    SharedPreferences.Editor editor = sharedPref.edit();
-    editor.putBoolean(getString(R.string.saved_tutorial_complete_key), false);
-    editor.apply();
+    SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this); //getPreferences(Context.MODE_PRIVATE);
+//    SharedPreferences.Editor editor = sharedPref.edit();
+//    editor.putBoolean(getString(R.string.saved_tutorial_complete_key), false);
+//    editor.apply();
     //upon start check to see if sandy's been educated. if yes, inflate sandwichImage (capture) fragment, if not inflate response frag to tutorial
-    if (!sharedPref.getBoolean(getString(R.string.saved_tutorial_complete_key), false) == false) {
+    if (sharedPref.getBoolean(getString(R.string.saved_tutorial_complete_key), false)) {
       Navigation.findNavController(this, R.id.nav_host_fragment).navigate(R.id.action_responseFragment_to_sandwichImageFragment);
     }
-   // setContentView(R.layout.sandwich_fragment);
+//   setContentView(R.layout.sandwich_fragment);
   }
 }

@@ -1,6 +1,7 @@
 package com.learning.sandwich.sandy;
 
 import android.content.Context;
+import android.content.res.Resources;
 import androidx.annotation.NonNull;
 import androidx.room.Database;
 import androidx.room.DatabaseConfiguration;
@@ -30,13 +31,15 @@ public abstract class SandyDatabase extends RoomDatabase {
             @Override
             public void onCreate(@NonNull SupportSQLiteDatabase db) {
               super.onCreate(db);
+              Resources res = context.getResources();
               new Thread(() -> {
                 for(int i = 1; i < 13; i++) { //TODO Amake sure to expand scope of  for-loop if images added to tutorial
                   Sandwich sandwich = new Sandwich();
                   sandwich.setSandwichId(i);
-                  sandwich.setFileName("/app/src/main/res/drawable/test_image" + i + ".png");
+                  sandwich.setFileName("test_image" + i);
                   sandwich.setMachineEat(true);
                   sandwich.setSandwichStyle(0);
+                  sandwich.setImageResource(true);
                   INSTANCE.sandwichDao().insert(sandwich);
                 }
               }).start();

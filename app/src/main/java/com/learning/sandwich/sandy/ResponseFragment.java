@@ -2,16 +2,15 @@ package com.learning.sandwich.sandy;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import androidx.fragment.app.FragmentManager;
-import androidx.lifecycle.ViewModelProviders;
+import androidx.lifecycle.LiveData;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,8 +18,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import androidx.navigation.Navigation;
 import android.preference.PreferenceManager;
+import com.learning.sandwich.sandy.model.Sandwich;
+import java.util.List;
 import java.util.Random;
 
 public class ResponseFragment extends Fragment {
@@ -37,13 +37,8 @@ public class ResponseFragment extends Fragment {
   private Boolean tutorialComplete;
   private SharedPreferences.Editor editor;
   private int tutorialPosition = 0;
-  final int[] imageArray = {R.drawable.test_image1, R.drawable.test_image2,
-      R.drawable.test_image3,
-      R.drawable.test_image4, R.drawable.test_image5, R.drawable.test_image6,
-      R.drawable.test_image7,
-      R.drawable.test_image8, R.drawable.test_image9, R.drawable.test_image10,
-      R.drawable.test_image11,
-      R.drawable.test_image12};
+  private List<Sandwich> sandwiches;
+  private LiveData<List<Sandwich>> sandwichQuery;
 
 
   public ResponseFragment() {
@@ -61,6 +56,10 @@ public class ResponseFragment extends Fragment {
     this.context = context;
     sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
     editor = sharedPref.edit();
+    sandwichQuery = SandyDatabase.getInstance(context).sandwichDao().getAll();
+    sandwichQuery.observe(this, (sandwiches) -> {
+      this.sandwiches = sandwiches;
+    });
   } // again outta movies, but context also seems super important
 
 
@@ -137,8 +136,18 @@ public class ResponseFragment extends Fragment {
 
   private void doTutorial(int position) {
     responseText.setText(randomTutorialQuestions());
-    Bitmap bmp = BitmapFactory.decodeResource(getResources(), imageArray[position]);
-    responseImage.setImageBitmap(bmp);
+    Sandwich sandwich = sandwiches.get(position);
+    Drawable drawable;
+    Resources res = getResources();
+    Bitmap bmp;
+    if(sandwich.isImageResource()){
+     int id = res.getIdentifier(sandwich.getFileName(), "drawable", getContext().getPackageName());
+     responseImage.setImageDrawable(getContext().getDrawable(id));
+    } else{
+
+    }
+  //   = BitmapFactory.decodeResource(getResources(), imageArray[position]);
+  //  responseImage.setImageBitmap(bmp);
     yesButton.setVisibility(View.VISIBLE);
     noButton.setVisibility(View.VISIBLE);
   }
