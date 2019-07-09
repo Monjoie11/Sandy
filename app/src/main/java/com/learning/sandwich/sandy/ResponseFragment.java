@@ -19,6 +19,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.preference.PreferenceManager;
+import androidx.lifecycle.ViewModelProviders;
 import com.learning.sandwich.sandy.model.Sandwich;
 import java.util.List;
 import java.util.Random;
@@ -39,6 +40,7 @@ public class ResponseFragment extends Fragment {
   private int tutorialPosition = 0;
   private List<Sandwich> sandwiches;
   private LiveData<List<Sandwich>> sandwichQuery;
+  private Sandwich sandwich;
 
 
   public ResponseFragment() {
@@ -66,6 +68,7 @@ public class ResponseFragment extends Fragment {
   @Override
   public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
       @Nullable Bundle savedInstanceState) {
+    final ResponseViewModel viewModel = ViewModelProviders.of(getActivity()).get(ResponseViewModel.class);
     final View view = inflater.inflate(R.layout.response_fragment, container, false);
     responseImage = view.findViewById(R.id.captured_sandwich);
     Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.test_image1);
@@ -100,7 +103,8 @@ public class ResponseFragment extends Fragment {
       } else if(tutorialPosition > 0 && tutorialPosition < 12){
         Toast.makeText(context, "Adding recipe to repertoire",
             Toast.LENGTH_LONG).show();
-        //TODO update response value in room
+        sandwich.setHumanEat(true);
+        viewModel.yesHumanEat(sandwich);
         doTutorial(tutorialPosition++);
       } else if(tutorialPosition == 12) {
         Toast.makeText(context, "Final recipe added. TUTORIAL COMPLETE",
@@ -136,7 +140,7 @@ public class ResponseFragment extends Fragment {
 
   private void doTutorial(int position) {
     responseText.setText(randomTutorialQuestions());
-    Sandwich sandwich = sandwiches.get(position);
+    sandwich = sandwiches.get(position);
     Drawable drawable;
     Resources res = getResources();
     Bitmap bmp;

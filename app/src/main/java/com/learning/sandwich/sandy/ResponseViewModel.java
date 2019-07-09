@@ -50,6 +50,18 @@ public class ResponseViewModel extends AndroidViewModel {
 
   }
 
+  public void yesHumanEat (final Sandwich sandwich){
+
+    new Thread(new Runnable() {
+      @Override
+      public void run() {
+        SandyDatabase db = SandyDatabase.getInstance(getApplication());
+        db.sandwichDao().updateHumanEat(sandwich);
+      }
+    }).start();
+
+  }
+
   public LiveData<Sandwich> getSandwich(Long sandwichId) {
     SandyDatabase db = SandyDatabase.getInstance(getApplication());
     return db.sandwichDao().findById(sandwichId);
