@@ -50,7 +50,7 @@ public class ResponseViewModel extends AndroidViewModel {
 
   }
 
-  public void yesHumanEat (final Sandwich sandwich){
+  public void updateHuamn(final Sandwich sandwich){
 
     new Thread(new Runnable() {
       @Override
