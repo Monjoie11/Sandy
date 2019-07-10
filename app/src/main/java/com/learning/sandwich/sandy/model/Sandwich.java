@@ -3,6 +3,7 @@ package com.learning.sandwich.sandy.model;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 
 @Entity
@@ -12,20 +13,26 @@ public class Sandwich implements Serializable {
 
   @PrimaryKey(autoGenerate = true)
   @ColumnInfo(name = "sandwich_id")
+  @SerializedName("id")
   private long sandwichId;
 
   @ColumnInfo(name = "sandwich_style")
+  @SerializedName("style")
   private int sandwichStyle;
 
   @ColumnInfo(name = "machine_eat")
+  @SerializedName("machineEat")
   private boolean machineEat;
 
   @ColumnInfo(name = "human_eat")
+  @SerializedName("humanEat")
   private boolean humanEat;
 
   @ColumnInfo(name = "file_name")
+  @SerializedName("file")
   private String fileName;
 
+  @SerializedName("isResource")
   public boolean isImageResource() {
     return imageResource;
   }

@@ -1,0 +1,807 @@
+[
+  {
+    "style" : 1,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image1"
+  },
+
+  {
+    "style" : 2,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image2"
+  },
+  {
+    "style" : 3,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image3"
+  },
+
+  {
+    "style" : 0,
+    "machineEat" :0,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image4"
+  },
+
+  {
+    "style" : 4,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image5"
+  },
+
+  {
+    "style" : 5,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image6"
+  },
+  {
+    "style" : 6,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image7"
+  },
+
+  {
+    "style" : 0,
+    "machineEat" :0,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image8"
+  },
+
+
+  {
+    "style" : 7,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image9"
+  },
+
+  {
+    "style" : 8,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image10"
+  },
+  {
+    "style" : 9,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image11"
+  },
+
+  {
+    "style" : 0,
+    "machineEat" :0,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image12"
+  },
+  {
+    "style" : 1,
+    "machineEat" : 0,
+    "humanEat" : 0,
+    "isResource": 0,
+    "file" : "https://assets.marthastewart.com/styles/wmax-750/d28/perfect-blt-sandwich-mscs107/perfect-blt-sandwich-mscs107_horiz.jpg"
+  },
+
+  {
+    "style" : 1,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 0,
+    "file" : "https://img1.cookinglight.timeinc.net/sites/default/files/styles/4_3_horizontal_-_900x675/public/image/2017/05/main/egg-in-nest-blt-sandwiches-1707p38.jpg"
+  },
+  {
+    "style" : 1,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 0,
+    "file" : "http://www.sugardale.com/sites/default/files/BLT-Grilled-Cheese_final.jpg"
+  },
+
+  {
+    "style" : 1,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 0,
+    "file" : "https://assets.marthastewart.com/styles/wmax-520-highdpi/d22/sas-blt-005a-med108875/sas-blt-005a-med108875_horiz.jpg"
+  },
+
+  {
+    "style" : 1,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 0,
+    "file" : "https://www.wikihow.com/images/2/2c/Make-Bacon-and-Ham-Sandwich-Step-5.jpg"
+  },
+
+  {
+    "style" : 1,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 0,
+    "file" : "https://indianakitchen.com/wp-content/uploads/2015/03/Ham-Sandwich.jpg"
+  },
+  {
+    "style" : 1,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 0,
+    "file" : "https://media4.s-nbcnews.com/i/newscms/2017_15/1206946/grilled-cheese-ham-today-170411-tease_2b8383ef006f363558f25c8c168ecbc9.jpg"
+  },
+
+  {
+    "style" : 1,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 0,
+    "file" : "https://cdn.vox-cdn.com/thumbor/NnQb6uGuOdGYkAHSjn8HlPrPYk8=/351x0:4668x3238/1200x675/filters:focal(351x0:4668x3238)/cdn.vox-cdn.com/uploads/chorus_image/image/52088791/bologna_bite.0.jpeg"
+  },
+
+  {
+    "style" : 1,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 0,
+    "file" : "https://www.foodiewithfamily.com/wp-content/uploads/2011/09/fried-bologna-sandwich-1-500x421.jpg"
+  },
+
+  {
+    "style" : 1,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 0,
+    "file" : "https://www.bar-s.com/assets/client_files/images/recipe_tile_images/Fried_Egg_Bologna_1000x1000.JPG"
+  },
+
+  {
+  "style" : 2,
+  "machineEat" : 0,
+  "humanEat" : 0,
+  "isResource": 0,
+  "file" : "http://www.fnstatic.co.uk/images/content/slide/an-ode-to-the-chip-butty_1.jpg"
+  },
+
+  {
+    "style" : 2,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 0,
+    "file" : "http://3.bp.blogspot.com/_ScBigNRg0Y4/S6vQ9acsYhI/AAAAAAAAAZY/PcWKnCpFq1E/s400/chip-butty.jpg"
+  },
+  {
+    "style" : 2,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 0,
+    "file" : "https://i.pinimg.com/originals/2d/fe/e7/2dfee7c9837bf02f785bce7005fb7d0d.jpg"
+  },
+
+  {
+    "style" : 2,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 0,
+    "file" : "https://www.myweekly.co.uk/wp-content/uploads/sites/9/2019/04/a20140169SkippyPBampJ21x-978x624.jpg"
+  },
+
+  {
+    "style" : 2,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "https://www.lifeslittlesweets.com/wp-content/uploads/2017/08/IMG_3509-Grilled-Peanut-Butter-and-Jelly-Sandwich-Bites-www.lifeslittlesweets.com-Sara-680x1020.jpg"
+  },
+
+  {
+    "style" : 2,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "https://cdn.pastemagazine.com/www/articles/THIS%20IS%20THE%20MAIN%20PB.png"
+  },
+  {
+    "style" : 2,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "https://lh3.googleusercontent.com/c2nOe5Y4RnA832oOaFo_DsrfbR_frqChVVgQiDz8B_F5szJgBaabVSIDl8Bp2f0W9262yXcBAaA50Kw_TIW3STsK4foiA5l2P2E4PQ=w600-l68"
+  },
+
+  {
+    "style" : 2,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "https://hips.hearstapps.com/del.h-cdn.co/assets/cm/15/10/54f6bb15edeba_-_banana-bliss-breakfast-sandwich-recipe-icbinb1011-xl.jpg"
+  },
+
+  {
+    "style" : 2,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fcdn-image.myrecipes.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2Fimage%2Frecipes%2Fck%2F07%2F12%2Fbanana-sandwiches-ck-1141987-x.jpg%3Fitok%3DhKe11uNU&w=450&c=sc&poi=face&q=85"
+  },
+
+  {
+    "style" : 2,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "https://images.media-allrecipes.com/userphotos/560x315/338144.jpg"
+  },
+
+  {
+    "style" : 3,
+    "machineEat" : 0,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image1"
+  },
+
+  {
+    "style" : 3,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image2"
+  },
+
+  {
+    "style" : 3,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image3"
+  },
+
+  {
+    "style" : 3,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image4"
+  },
+
+  {
+    "style" : 3,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image5"
+  },
+
+  {
+    "style" : 3,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image6"
+  },
+
+  {
+    "style" : 3,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image7"
+  },
+
+  {
+    "style" : 3,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image8"
+  },
+
+  {
+    "style" : 3,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image9"
+  },
+
+  {
+    "style" : 3,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image10"
+  },
+
+  {
+    "style" : 4,
+    "machineEat" : 0,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image1"
+  },
+
+  {
+    "style" : 4,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image2"
+  },
+
+  {
+    "style" : 4,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image3"
+  },
+
+  {
+    "style" : 4,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image4"
+  },
+
+  {
+    "style" : 4,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image5"
+  },
+
+  {
+    "style" : 4,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image6"
+  },
+
+  {
+    "style" : 4,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image7"
+  },
+
+  {
+    "style" : 4,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image8"
+  },
+
+  {
+    "style" : 4,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image9"
+  },
+
+  {
+    "style" : 4,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image10"
+  },
+  {
+    "style" : 5,
+    "machineEat" : 0,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image1"
+  },
+
+  {
+    "style" : 5,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image2"
+  },
+
+  {
+    "style" : 5,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image3"
+  },
+
+  {
+    "style" : 5,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image4"
+  },
+
+  {
+    "style" : 5,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image5"
+  },
+
+  {
+    "style" : 5,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image6"
+  },
+
+  {
+    "style" : 5,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image7"
+  },
+
+  {
+    "style" : 5,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image8"
+  },
+
+  {
+    "style" : 5,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image9"
+  },
+
+  {
+    "style" : 5,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image10"
+  },
+
+  {
+    "style" : 6,
+    "machineEat" : 0,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image1"
+  },
+
+  {
+    "style" : 6,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image2"
+  },
+
+  {
+    "style" : 6,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image3"
+  },
+
+  {
+    "style" : 6,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image4"
+  },
+
+  {
+    "style" : 6,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image5"
+  },
+
+  {
+    "style" : 6,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image6"
+  },
+
+  {
+    "style" : 6,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image7"
+  },
+
+  {
+    "style" : 6,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image8"
+  },
+
+  {
+    "style" : 6,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image9"
+  },
+
+  {
+    "style" : 6,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image10"
+  },
+
+  {
+    "style" : 7,
+    "machineEat" : 0,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image1"
+  },
+
+  {
+    "style" : 7,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image2"
+  },
+
+  {
+    "style" : 7,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image3"
+  },
+
+  {
+    "style" : 7,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image4"
+  },
+
+  {
+    "style" : 7,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image5"
+  },
+
+  {
+    "style" : 7,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image6"
+  },
+
+  {
+    "style" : 7,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image7"
+  },
+
+  {
+    "style" : 7,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image8"
+  },
+
+  {
+    "style" : 7,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image9"
+  },
+
+  {
+    "style" : 7,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image10"
+  },
+  {
+    "style" : 8,
+    "machineEat" : 0,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image1"
+  },
+
+  {
+    "style" : 8,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image2"
+  },
+
+  {
+    "style" : 8,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image3"
+  },
+
+  {
+    "style" : 8,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image4"
+  },
+
+  {
+    "style" : 8,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image5"
+  },
+
+  {
+    "style" : 8,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image6"
+  },
+
+  {
+    "style" : 8,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image7"
+  },
+
+  {
+    "style" : 8,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image8"
+  },
+
+  {
+    "style" : 8,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image9"
+  },
+
+  {
+    "style" : 8,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image10"
+  },
+  {
+    "style" : 9,
+    "machineEat" : 0,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image1"
+  },
+
+  {
+    "style" : 9,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image2"
+  },
+
+  {
+    "style" : 9,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image3"
+  },
+
+  {
+    "style" : 9,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image4"
+  },
+
+  {
+    "style" : 9,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image5"
+  },
+
+  {
+    "style" : 9,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image6"
+  },
+
+  {
+    "style" : 9,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image7"
+  },
+
+  {
+    "style" : 9,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image8"
+  },
+
+  {
+    "style" : 9,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image9"
+  },
+
+  {
+    "style" : 9,
+    "machineEat" :1,
+    "humanEat" : 0,
+    "isResource": 1,
+    "file" : "test_image10"
+  }
+]
