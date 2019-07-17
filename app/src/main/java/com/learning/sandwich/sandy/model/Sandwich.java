@@ -33,6 +33,9 @@ public class Sandwich implements Serializable {
   private String fileName;
 
   @SerializedName("isResource")
+  @ColumnInfo(name = "image_resource")
+  private boolean imageResource;
+
   public boolean isImageResource() {
     return imageResource;
   }
@@ -40,10 +43,6 @@ public class Sandwich implements Serializable {
   public void setImageResource(boolean imageResource) {
     this.imageResource = imageResource;
   }
-
-  @ColumnInfo(name = "image_resource")
-  private boolean imageResource;
-
 
   public long getSandwichId() {
     return sandwichId;

@@ -35,18 +35,6 @@ public abstract class SandyDatabase extends RoomDatabase {
             public void onCreate(@NonNull SupportSQLiteDatabase db) {
               super.onCreate(db);
               new PopulateDbTask(INSTANCE, context).execute();
-//              Resources res = context.getResources();
-//              new Thread(() -> {
-//                for(int i = 1; i < 13; i++) { //TODO Amake sure to expand scope of  for-loop if images added to tutorial
-//                  Sandwich sandwich = new Sandwich();
-//                  sandwich.setSandwichId(i);
-//                  sandwich.setFileName("test_image" + i);
-//                  sandwich.setMachineEat(true);
-//                  sandwich.setSandwichStyle(0);
-//                  sandwich.setImageResource(true);
-//                  INSTANCE.sandwichDao().insert(sandwich);
-//                }
-//              }).start();
             }
           })
           .build();

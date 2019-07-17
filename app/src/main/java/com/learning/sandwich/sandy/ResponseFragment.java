@@ -33,7 +33,6 @@ public class ResponseFragment extends Fragment {
   private ResponseViewModel mViewModel;
   private ImageView responseImage;
   private TextView responseText;
-  private Context context;
   private SharedPreferences sharedPref;
   private Boolean tutorialComplete;
   private SharedPreferences.Editor editor;
@@ -55,7 +54,6 @@ public class ResponseFragment extends Fragment {
   @Override
   public void onAttach(Context context) {
     super.onAttach(context);
-    this.context = context;
     sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
     editor = sharedPref.edit();
     sandwichQuery = SandyDatabase.getInstance(context).sandwichDao().getAll();
@@ -78,16 +76,16 @@ public class ResponseFragment extends Fragment {
     noButton.setOnClickListener(v -> {
       if (tutorialPosition == 0 && !sharedPref
           .getBoolean(getString(R.string.saved_tutorial_complete_key), false)) {
-        Toast.makeText(context, "Watch where you put that finger. I said touch my buns.",
+        Toast.makeText(getContext(), "Watch where you put that finger. I said touch my buns.",
             Toast.LENGTH_LONG).show();
       } else if (tutorialPosition > 0 && tutorialPosition < 12) {
-        Toast.makeText(context, "Not a sandwich - discarding recipe",
+        Toast.makeText(getContext(), "Not a sandwich - discarding recipe",
             Toast.LENGTH_LONG).show();
         sandwich.setHumanEat(false);
         viewModel.updateHuamn(sandwich);
         doTutorial(tutorialPosition++);
       } else if (tutorialPosition == 12) {
-        Toast.makeText(context, "Discarding recipe. TUTORIAL COMPLETE",
+        Toast.makeText(getContext(), "Discarding recipe. TUTORIAL COMPLETE",
             Toast.LENGTH_LONG).show();
         sandwich.setHumanEat(false);
         viewModel.updateHuamn(sandwich);
@@ -102,17 +100,17 @@ public class ResponseFragment extends Fragment {
     yesButton.setOnClickListener(v -> {
       if (tutorialPosition == 0 && !sharedPref
           .getBoolean(getString(R.string.saved_tutorial_complete_key), false)) {
-        Toast.makeText(context, "Mmmmmm. Teach me your ways. Starting Tutorial",
+        Toast.makeText(getContext(), "Mmmmmm. Teach me your ways. Starting Tutorial",
             Toast.LENGTH_LONG).show();
         doTutorial(tutorialPosition++);
       } else if (tutorialPosition > 0 && tutorialPosition < 12) {
-        Toast.makeText(context, "Adding recipe to repertoire",
+        Toast.makeText(getContext(), "Adding recipe to repertoire",
             Toast.LENGTH_LONG).show();
         sandwich.setHumanEat(true);
         viewModel.updateHuamn(sandwich);
         doTutorial(tutorialPosition++);
       } else if (tutorialPosition == 12) {
-        Toast.makeText(context, "Final recipe added. TUTORIAL COMPLETE",
+        Toast.makeText(getContext(), "Final recipe added. TUTORIAL COMPLETE",
             Toast.LENGTH_LONG).show();
         sandwich.setHumanEat(true);
         viewModel.updateHuamn(sandwich);

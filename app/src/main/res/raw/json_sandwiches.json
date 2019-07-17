@@ -1,807 +1,807 @@
 [
   {
     "style" : 1,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 1,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": true,
     "file" : "test_image1"
   },
 
   {
     "style" : 2,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 1,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": true,
     "file" : "test_image2"
   },
   {
     "style" : 3,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 1,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": true,
     "file" : "test_image3"
   },
 
   {
     "style" : 0,
-    "machineEat" :0,
-    "humanEat" : 0,
-    "isResource": 1,
+    "machineEat" : false,
+    "humanEat" : false,
+    "isResource": true,
     "file" : "test_image4"
   },
 
   {
     "style" : 4,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 1,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": true,
     "file" : "test_image5"
   },
 
   {
     "style" : 5,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 1,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": true,
     "file" : "test_image6"
   },
   {
     "style" : 6,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 1,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": true,
     "file" : "test_image7"
   },
 
   {
     "style" : 0,
-    "machineEat" :0,
-    "humanEat" : 0,
-    "isResource": 1,
+    "machineEat" : false,
+    "humanEat" : false,
+    "isResource": true,
     "file" : "test_image8"
   },
 
 
   {
     "style" : 7,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 1,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": true,
     "file" : "test_image9"
   },
 
   {
     "style" : 8,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 1,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": true,
     "file" : "test_image10"
   },
   {
     "style" : 9,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 1,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": true,
     "file" : "test_image11"
   },
 
   {
     "style" : 0,
-    "machineEat" :0,
-    "humanEat" : 0,
-    "isResource": 1,
+    "machineEat" : false,
+    "humanEat" : false,
+    "isResource": true,
     "file" : "test_image12"
   },
   {
     "style" : 1,
-    "machineEat" : 0,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : false,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://assets.marthastewart.com/styles/wmax-750/d28/perfect-blt-sandwich-mscs107/perfect-blt-sandwich-mscs107_horiz.jpg"
   },
 
   {
     "style" : 1,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://img1.cookinglight.timeinc.net/sites/default/files/styles/4_3_horizontal_-_900x675/public/image/2017/05/main/egg-in-nest-blt-sandwiches-1707p38.jpg"
   },
   {
     "style" : 1,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "http://www.sugardale.com/sites/default/files/BLT-Grilled-Cheese_final.jpg"
   },
 
   {
     "style" : 1,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://assets.marthastewart.com/styles/wmax-520-highdpi/d22/sas-blt-005a-med108875/sas-blt-005a-med108875_horiz.jpg"
   },
 
   {
     "style" : 1,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://www.wikihow.com/images/2/2c/Make-Bacon-and-Ham-Sandwich-Step-5.jpg"
   },
 
   {
     "style" : 1,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://indianakitchen.com/wp-content/uploads/2015/03/Ham-Sandwich.jpg"
   },
   {
     "style" : 1,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://media4.s-nbcnews.com/i/newscms/2017_15/1206946/grilled-cheese-ham-today-170411-tease_2b8383ef006f363558f25c8c168ecbc9.jpg"
   },
 
   {
     "style" : 1,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://cdn.vox-cdn.com/thumbor/NnQb6uGuOdGYkAHSjn8HlPrPYk8=/351x0:4668x3238/1200x675/filters:focal(351x0:4668x3238)/cdn.vox-cdn.com/uploads/chorus_image/image/52088791/bologna_bite.0.jpeg"
   },
 
   {
     "style" : 1,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://www.foodiewithfamily.com/wp-content/uploads/2011/09/fried-bologna-sandwich-1-500x421.jpg"
   },
 
   {
     "style" : 1,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://www.bar-s.com/assets/client_files/images/recipe_tile_images/Fried_Egg_Bologna_1000x1000.JPG"
   },
 
   {
   "style" : 2,
-  "machineEat" : 0,
-  "humanEat" : 0,
-  "isResource": 0,
+  "machineEat" : false,
+  "humanEat" : false,
+  "isResource": false,
   "file" : "http://www.fnstatic.co.uk/images/content/slide/an-ode-to-the-chip-butty_1.jpg"
   },
 
   {
     "style" : 2,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "http://3.bp.blogspot.com/_ScBigNRg0Y4/S6vQ9acsYhI/AAAAAAAAAZY/PcWKnCpFq1E/s400/chip-butty.jpg"
   },
   {
     "style" : 2,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://i.pinimg.com/originals/2d/fe/e7/2dfee7c9837bf02f785bce7005fb7d0d.jpg"
   },
 
   {
     "style" : 2,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://www.myweekly.co.uk/wp-content/uploads/sites/9/2019/04/a20140169SkippyPBampJ21x-978x624.jpg"
   },
 
   {
     "style" : 2,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://www.lifeslittlesweets.com/wp-content/uploads/2017/08/IMG_3509-Grilled-Peanut-Butter-and-Jelly-Sandwich-Bites-www.lifeslittlesweets.com-Sara-680x1020.jpg"
   },
 
   {
     "style" : 2,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://cdn.pastemagazine.com/www/articles/THIS%20IS%20THE%20MAIN%20PB.png"
   },
   {
     "style" : 2,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://lh3.googleusercontent.com/c2nOe5Y4RnA832oOaFo_DsrfbR_frqChVVgQiDz8B_F5szJgBaabVSIDl8Bp2f0W9262yXcBAaA50Kw_TIW3STsK4foiA5l2P2E4PQ=w600-l68"
   },
 
   {
     "style" : 2,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://hips.hearstapps.com/del.h-cdn.co/assets/cm/15/10/54f6bb15edeba_-_banana-bliss-breakfast-sandwich-recipe-icbinb1011-xl.jpg"
   },
 
   {
     "style" : 2,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fcdn-image.myrecipes.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2Fimage%2Frecipes%2Fck%2F07%2F12%2Fbanana-sandwiches-ck-1141987-x.jpg"
   },
 
   {
     "style" : 2,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://images.media-allrecipes.com/userphotos/560x315/338144.jpg"
   },
 
   {
     "style" : 3,
-    "machineEat" : 1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://www.klondikebar.com/wp-content/uploads/sites/49/2019/06/mrs-fields-chocolate-chip-cookie-ice-cream-sandwich.png"
   },
 
   {
     "style" : 3,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://inspiredbycharm.com/wp-content/uploads/2017/06/Peanut-Butter-Waffles-and-Jelly-Ice-Cream-Sandwich-recipe.jpg"
   },
 
   {
     "style" : 3,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://www.lecremedelacrumb.com/wp-content/uploads/2015/08/waffle-ice-cream-sandwiches-1.jpg"
   },
 
   {
     "style" : 3,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://www.inspiredtaste.net/wp-content/uploads/2013/07/Chocolate-Ice-Cream-Sandwiches-1-1200.jpg"
   },
 
   {
     "style" : 3,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://www.piesandtacos.com/wp-content/uploads/2019/03/chocolate-macaron-11.jpg"
   },
 
   {
     "style" : 3,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://www.bywoops.com/wp-content/uploads/2017/07/woops-macaron-honey-lavender-600x399.jpg"
   },
 
   {
     "style" : 3,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://www.savingdessert.com/wp-content/uploads/2018/11/Viennese-Whirls-2.jpg"
   },
 
   {
     "style" : 3,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://londoneats.files.wordpress.com/2013/08/whirl11.jpg"
   },
 
   {
     "style" : 3,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://images-gmi-pmc.edge-generalmills.com/25c50d46-aac2-4a0b-a7d0-fe0276f54548.jpg"
   },
 
   {
     "style" : 3,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "http://ibakeheshoots.com/wp-content/uploads/2014/05/Chocolate_Sandwiches-2-1024x679.jpg"
   },
 
   {
     "style" : 4,
-    "machineEat" : 0,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://prods3.imgix.net/images/articles/2017_04/Feature-restaurant-butcher-bakery-shops2.jpg"
   },
 
   {
     "style" : 4,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://d1bjorv296jxfn.cloudfront.net/s3fs-public/styles/recipes_header_image/public/recipe-images/sargento/2108-SuperAmericanSub.jpg"
   },
 
   {
     "style" : 4,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://www.firehousesubs.com/media/1276/hook-ladder_retouch.png"
   },
 
   {
     "style" : 4,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "http://www.quiznos.com/Libraries/sandwich-pics-2018/Traditonal__871x420.sflb.ashx"
   },
 
   {
     "style" : 4,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "http://www.quiznos.com/Libraries/sandwich-pics-2018/Mesquite_Chicken_871x420.sflb.ashx"
   },
 
   {
     "style" : 4,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://cdn.cdkitchen.com/images/cats/712/cat-712-720-1.jpg"
   },
 
   {
     "style" : 4,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://www.tasteofhome.com/wp-content/uploads/2017/10/exps23238_TH10524D41C-1.jpg"
   },
 
   {
     "style" : 4,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://milios.com/wp-content/uploads/2018/03/MS17_Sandwiches_1AmericanFavorite.jpg"
   },
 
   {
     "style" : 4,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://d1bjorv296jxfn.cloudfront.net/s3fs-public/styles/recipes_header_image/public/recipe-images/sargento/Engine-House-Special.jpg"
   },
 
   {
     "style" : 4,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://createmindfully.com/wp-content/uploads/2016/07/vegan-submarine-sandwich-close-up.jpg"
   },
   {
     "style" : 5,
-    "machineEat" : 0,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "http://i.imgur.com/gVaAf5o.jpg"
   },
 
   {
     "style" : 5,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfkFN8ue72JKBCb6t7iguBaCQHWu3gZK_raML9MnRsclUAv83_"
   },
 
   {
     "style" : 5,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://deadseriousness.com/wp-content/uploads/2015/11/hot-dog.jpg"
   },
 
   {
     "style" : 5,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://cdn.rec-engine.com/pg_1,f_auto,fl_lossy,h_233,w_350,c_fill,g_auto,dpr_2,q_auto/v1562786826/6643c75e1cd64d0d970932b716aa92e2"
   },
 
   {
     "style" : 5,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://cdn.phonebooky.com/blog/wp-content/uploads/2019/05/22113958/fatburger.jpg"
   },
 
   {
     "style" : 5,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://assets.marthastewart.com/styles/wmax-750/d35/wisconsin-beer-brats-0617-102941317/wisconsin-beer-brats-0617-102941317_horiz.jpg"
   },
 
   {
     "style" : 5,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://www.rosepacking.com/wp-content/uploads/sites/2/2016/11/bratwurst-on-bun-615x400.jpg"
   },
 
   {
     "style" : 5,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://i.ytimg.com/vi/rAvuiOAC-V8/maxresdefault.jpg"
   },
 
   {
     "style" : 5,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://images2.minutemediacdn.com/image/upload/c_fill,g_auto,h_1248,w_2220/f_auto,q_auto,w_1100/v1555316560/shape/mentalfloss/hotdogprimary_0.png"
   },
 
   {
     "style" : 5,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://amp.businessinsider.com/images/5748b38fdd08950e168b459e-750-563.jpg"
   },
 
   {
     "style" : 6,
-    "machineEat" : 0,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://images-gmi-pmc.edge-generalmills.com/e59f255c-7498-4b84-9c9d-e578bf5d88fc.jpg"
   },
 
   {
     "style" : 6,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://d1doqjmisr497k.cloudfront.net/-/media/mccormick-us/recipes/mccormick/f/800/fiesta_tacos_800x800.jpg?"
   },
 
   {
     "style" : 6,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2012/2/29/0/0149359_Making-Taco_s4x3.jpg.rend.hgtvcom.826.620.suffix/1371603491866.jpeg"
   },
 
   {
     "style" : 6,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://www.ketovale.com/wp-content/uploads/2017/08/Cheese-Shell-Tacos.jpg"
   },
 
   {
     "style" : 6,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://cdn-image.myrecipes.com/sites/default/files/styles/medium_2x/public/image/recipes/rs/2003/shrimp-tacos-rs-635602-x.jpg"
   },
 
   {
     "style" : 6,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://tipbuzz.com/wp-content/uploads/Apple-Pie-Tacos-.jpg"
   },
 
   {
     "style" : 6,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://www.prairiefarms.com/wp-content/uploads/2017/04/IceCreamTaco.jpg"
   },
 
   {
     "style" : 6,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://www.klondikebar.com/wp-content/uploads/sites/49/2018/03/choco-taco-ice-cream.png"
   },
 
   {
     "style" : 6,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://static.smuckersrms.com/PhotoImage.ashx?recipeId=8738&h=600&w=600"
   },
 
   {
     "style" : 6,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 1,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": true,
     "file" : "https://www.ketovale.com/wp-content/uploads/2017/08/Cheese-Shell-Tacos.jpg"
   },
 
   {
     "style" : 7,
-    "machineEat" : 0,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://www.landolakes.com/RecipeManagementSystem/media/Recipe-Media-Files/Recipes/Retail/x17/18745-italian-chicken-wraps-600x600.jpg?ext=.jpg"
   },
 
   {
     "style" : 7,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://images-gmi-pmc.edge-generalmills.com/6fa84ebb-4868-48dd-95a9-c6ae2b317170.jpg"
   },
 
   {
     "style" : 7,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://www.tasteandtellblog.com/wp-content/uploads/2017/05/California-Club-Chicken-Wrap-tasteandtellblog.com-3-update.jpg"
   },
 
   {
     "style" : 7,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://theflavoursofkitchen.com/wp-content/uploads/2016/10/tandoori-chicken-wrap-with-cheese-garlic-yogurt-sauce.1024x1024-1.jpg"
   },
 
   {
     "style" : 7,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToUbhUN5dgmVLA8X-hxMZmqpf6WXwLX_LQ32tE9x9DaT32M1YI"
   },
 
   {
     "style" : 7,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwkL6_pCVYGEDY-ZPgWmO4NW1H9shISnYaQrddFka3P1MjXvFV"
   },
 
   {
     "style" : 7,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://beyondfrosting.com/wp-content/uploads/2019/05/Blackberry-Balsamic-Chicken-Wrap-078.jpg7"
   },
 
   {
     "style" : 7,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://i1.wp.com/mamabearscookbook.com/wp-content/uploads/2019/01/low-carb-chicken-wrap-feature.jpg"
   },
 
   {
     "style" : 7,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "http://www.fyp365.com/wp-content/uploads/2019/02/M21872-Tandoori-Chicken-Wrap-400x267.png"
   },
 
   {
     "style" : 7,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://lh3.ggpht.com/t8tTgWtmOYNa3MoZuBYB-tiSc3lWEvl-FY7Z5GzqLL_HEs9C93OHAtbI5fTuRZm-sE4CffxQTNgkdNgNB04ztw=s400"
   },
   {
     "style" : 8,
-    "machineEat" : 0,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2015/10/26/1/GI1806H_Stewed-Green-Chile-Chicken-Burrito_s4x3.jpg.rend.hgtvcom.616.462.suffix/1452637117909.jpeg"
   },
 
   {
     "style" : 8,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://www.tacopalenque.com/wp-content/themes/tacoPalenque2017/dist/assets/images/menu-items-pages/burritos-page/fajita-burrito.jpg"
   },
 
   {
     "style" : 8,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://cdn1.zonacooks.com/wp-content/uploads/2018/03/Best-ever-Smothered-Wet-Burritos-Recipe-24-720x540.jpg"
   },
 
   {
     "style" : 8,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fcdn-image.myrecipes.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2Fimage%2Frecipes%2Fay%2F08%2Fchicken-burritto-ay-1892167-x.jpg%3Fitok%3D0IK2DOLD&w=450&c=sc&poi=face&q=85"
   },
 
   {
     "style" : 8,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://tacobell.es/wp-content/uploads/2017/05/quesarito.png"
   },
 
   {
     "style" : 8,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://amp.businessinsider.com/images/590ce5c269e69a24008b4d5c-1920-960.jpg"
   },
 
   {
     "style" : 8,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://blueapachela.com/files/2015/02/Taco-Burrito-1.jpg?w=1060&h=795&a=t"
   },
 
   {
     "style" : 8,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7ETRxjXAtcysakzSyPz90dqsGu-nDkhj7c8KGS1VZQBpYznsF-Q"
   },
 
   {
     "style" : 8,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7JMjpJD5p1Xd5VI_8V3BwprD348STUPexYNjD0485TIAyFoDSXw"
   },
 
   {
     "style" : 8,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://taco.sfo2.digitaloceanspaces.com/2018/10/Casita-Burrito-BEEF-343x300.png"
   },
   {
     "style" : 9,
-    "machineEat" : 0,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtgi0iDtmLlDU1zOVDEGrX7cK-lKDwWl60dmIJKkzRRBfsNgjE9Q"
   },
 
   {
     "style" : 9,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://cdn-image.myrecipes.com/sites/default/files/styles/4_3_horizontal_-_1200x900/public/message-editor%252F1492451833922-butter-on-a-pop-tart-inline-builder_0.jpg?itok=2bkMHx8-"
   },
 
   {
     "style" : 9,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://www.shefinds.com/files/2017/12/never-eat-poptart-2.jpg"
   },
 
   {
     "style" : 9,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://thestayathomechef.com/wp-content/uploads/2017/10/Brown-Sugar-Poptarts4.jpg"
   },
 
   {
     "style" : 9,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://i.kym-cdn.com/entries/icons/mobile/000/025/693/Screen_Shot_2018-03-15_at_11.21.19_AM.jpg"
   },
 
   {
     "style" : 9,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://static1.squarespace.com/static/52bf6358e4b0da7f33233c6c/52c1a959e4b02db35e590d13/52c1a95fe4b02db35e5910db/1388423672829/198A5922.jpg"
   },
 
   {
     "style" : 9,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://static1.squarespace.com/static/5873b7c1b8a79bc1e78b1c35/5874f043b8a79bc9a7951fbb/5b9b9ebb898583f86272ecce/1536926811095/7596246864_IMG_9012.JPG"
   },
 
   {
     "style" : 9,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://www.iheartnaptime.net/wp-content/uploads/2017/04/Taco-pop-tarts-i-heart-naptime-4-500x500.jpg"
   },
 
   {
     "style" : 9,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://southmountaincreamery.com/wp-content/uploads/2018/11/cranberry-orange-pop-tarts.jpg"
   },
 
   {
     "style" : 9,
-    "machineEat" :1,
-    "humanEat" : 0,
-    "isResource": 0,
+    "machineEat" : true,
+    "humanEat" : false,
+    "isResource": false,
     "file" : "https://theloopywhisk.com/wp-content/uploads/2018/09/Raspberry-Glazed-Gluten-Free-Pop-Tarts_730px-8.jpg"
   }
 ]
