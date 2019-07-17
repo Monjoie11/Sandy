@@ -1,0 +1,96 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "7f98fa5a3e877e16e510816936f450f1",
+    "entities": [
+      {
+        "tableName": "Sandwich",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`sandwich_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `sandwich_style` INTEGER NOT NULL, `machine_eat` INTEGER NOT NULL, `human_eat` INTEGER NOT NULL, `file_name` TEXT, `image_resource` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "sandwichId",
+            "columnName": "sandwich_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sandwichStyle",
+            "columnName": "sandwich_style",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "machineEat",
+            "columnName": "machine_eat",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "humanEat",
+            "columnName": "human_eat",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fileName",
+            "columnName": "file_name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "imageResource",
+            "columnName": "image_resource",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "sandwich_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Response",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`response_id` INTEGER NOT NULL, `response_category` INTEGER NOT NULL, `sandy_speaks` TEXT, PRIMARY KEY(`response_id`))",
+        "fields": [
+          {
+            "fieldPath": "responseId",
+            "columnName": "response_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "responseCategory",
+            "columnName": "response_category",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sandySpeaks",
+            "columnName": "sandy_speaks",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "response_id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '7f98fa5a3e877e16e510816936f450f1')"
+    ]
+  }
+}
