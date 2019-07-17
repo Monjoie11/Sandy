@@ -12,7 +12,7 @@ public class DatabaseService extends SQLiteOpenHelper {
 
 
     public DatabaseService(@Nullable Context context) {
-      super(context, "sandwiches.db", null, 1);
+      super(context, "json_sandwiches.db", null, 1);
     }
 
     @Override

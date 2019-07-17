@@ -14,7 +14,7 @@ public interface SandwichDao {
 
 
   @Insert
-  void insert(Sandwich sandwich);
+  void insert(Sandwich... sandwich);
 
 
   @Query("Select * FROM sandwich")
