@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "7f98fa5a3e877e16e510816936f450f1",
+    "identityHash": "46b4ef341abeb740ca42c9d7af34ba20",
     "entities": [
       {
         "tableName": "Sandwich",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`sandwich_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `sandwich_style` INTEGER NOT NULL, `machine_eat` INTEGER NOT NULL, `human_eat` INTEGER NOT NULL, `file_name` TEXT, `image_resource` INTEGER NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`sandwich_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `sandwich_style` INTEGER NOT NULL, `machine_eat` INTEGER NOT NULL, `human_eat` INTEGER NOT NULL, `file_name` TEXT NOT NULL, `image_resource` INTEGER NOT NULL)",
         "fields": [
           {
             "fieldPath": "sandwichId",
@@ -36,7 +36,7 @@
             "fieldPath": "fileName",
             "columnName": "file_name",
             "affinity": "TEXT",
-            "notNull": false
+            "notNull": true
           },
           {
             "fieldPath": "imageResource",
@@ -90,7 +90,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '7f98fa5a3e877e16e510816936f450f1')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '46b4ef341abeb740ca42c9d7af34ba20')"
     ]
   }
 }

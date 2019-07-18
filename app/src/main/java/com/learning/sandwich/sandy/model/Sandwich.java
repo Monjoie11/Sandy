@@ -1,5 +1,7 @@
 package com.learning.sandwich.sandy.model;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -18,6 +20,7 @@ public class Sandwich implements Serializable {
 
   @ColumnInfo(name = "sandwich_style")
   @SerializedName("style")
+  @Nullable
   private int sandwichStyle;
 
   @ColumnInfo(name = "machine_eat")
@@ -28,6 +31,7 @@ public class Sandwich implements Serializable {
   @SerializedName("humanEat")
   private boolean humanEat;
 
+  @NonNull
   @ColumnInfo(name = "file_name")
   @SerializedName("file")
   private String fileName;
