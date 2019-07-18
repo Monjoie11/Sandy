@@ -22,6 +22,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.preference.PreferenceManager;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.navigation.Navigation;
 import com.google.android.material.snackbar.Snackbar;
 import com.learning.sandwich.sandy.model.Sandwich;
 import com.learning.sandwich.sandy.model.dao.SandwichDao;
@@ -45,6 +46,7 @@ public class ResponseFragment extends Fragment{
   private List<Sandwich> sandwiches;
   private LiveData<List<Sandwich>> sandwichQuery;
   private Sandwich sandwich;
+  private int malingeringCount = 0;
 
 
   public ResponseFragment()  {
@@ -87,28 +89,59 @@ public class ResponseFragment extends Fragment{
             break;
           case 1: Snackbar snackbarNo1 = Snackbar.make(view, getString(R.string.tutorial_no1), Snackbar.LENGTH_LONG);
             snackbarNo1.show();
+            malingeringCount++;
             doTutorial(tutorialPosition++);
             break;
           case 2: Snackbar snackbarNo2 = Snackbar.make(view, getString(R.string.tutorial_no2), Snackbar.LENGTH_LONG);
             snackbarNo2.show();
-            sandwich.setHumanEat(false);
-            viewModel.updateHumanEat(sandwich);
-            new Thread(() -> {
-             SandyDatabase db = SandyDatabase.getInstance(getContext());
-             db.sandwichDao().tutorialDelete(tutorialPosition);
-            });
-            doTutorial(tutorialPosition++);
+            notASandwich(viewModel);
           case 3: Snackbar snackbarNo3 = Snackbar.make(view, getString(R.string.tutorial_no3), Snackbar.LENGTH_LONG);
             snackbarNo3.show();
+            notASandwich(viewModel);
+          case 4: Snackbar snackbarNo4 = Snackbar.make(view, getString(R.string.tutorial_no4), Snackbar.LENGTH_LONG);
+            snackbarNo4.show();
             sandwich.setHumanEat(false);
             viewModel.updateHumanEat(sandwich);
-            new Thread(() -> {
-              SandyDatabase db = SandyDatabase.getInstance(getContext());
-              db.sandwichDao().tutorialDelete(tutorialPosition);
-            });
             doTutorial(tutorialPosition++);
+          case 5: Snackbar snackbarNo5 = Snackbar.make(view, getString(R.string.tutorial_no5), Snackbar.LENGTH_LONG);
+            snackbarNo5.show();
+            notASandwich(viewModel);
+          case 6: Snackbar snackbarNo6 = Snackbar.make(view, getString(R.string.tutorial_no6), Snackbar.LENGTH_LONG);
+            snackbarNo6.show();
+            notASandwich(viewModel);
+          case 7: Snackbar snackbarNo7 = Snackbar.make(view, getString(R.string.tutorial_no7), Snackbar.LENGTH_LONG);
+            snackbarNo7.show();
+            notASandwich(viewModel);
+          case 8: Snackbar snackbarNo8 = Snackbar.make(view, getString(R.string.tutorial_no8), Snackbar.LENGTH_LONG);
+            snackbarNo8.show();
+            sandwich.setHumanEat(false);
+            viewModel.updateHumanEat(sandwich);
+            doTutorial(tutorialPosition++);
+          case 9: Snackbar snackbarNo9 = Snackbar.make(view, getString(R.string.tutorial_no9), Snackbar.LENGTH_LONG);
+            snackbarNo9.show();
+            notASandwich(viewModel);
+          case 10: Snackbar snackbarNo10 = Snackbar.make(view, getString(R.string.tutorial_no10), Snackbar.LENGTH_LONG);
+            snackbarNo10.show();
+            notASandwich(viewModel);
+          case 11: Snackbar snackbarNo11 = Snackbar.make(view, getString(R.string.tutorial_no11), Snackbar.LENGTH_LONG);
+            snackbarNo11.show();
+            notASandwich(viewModel);
+          case 12: Snackbar snackbarNo12 = Snackbar.make(view, getString(R.string.tutorial_no12), Snackbar.LENGTH_LONG);
+            snackbarNo12.show();
+            sandwich.setHumanEat(false);
+            viewModel.updateHumanEat(sandwich);
+            doTutorial(tutorialPosition++);
+            if(malingeringCount > 2) {
+              Snackbar snackbarNo13 = Snackbar.make(view, getString(R.string.tutorial_no13), Snackbar.LENGTH_LONG);
+              snackbarNo13.show();
+              tutorialPosition = 0;
+            } else {
+              Snackbar snackbarNo14 = Snackbar.make(view, getString(R.string.tutorial_no14), Snackbar.LENGTH_LONG);
+              snackbarNo14.show();
 
+              Navigation.findNavController(Ge, R.id.nav_host_fragment).navigate(R.id.action_responseFragment_to_sandwichImageFragment)
 
+            }
 
         }
         if (tutorialPosition == 0) {
@@ -168,6 +201,16 @@ public class ResponseFragment extends Fragment{
     //TODO All the stuff response fragment will do when not in tutorial
 
     return view;
+  }
+
+  private void notASandwich(ResponseViewModel viewModel) {
+    sandwich.setHumanEat(false);
+    viewModel.updateHumanEat(sandwich);
+    new Thread(() -> {
+      SandyDatabase db = SandyDatabase.getInstance(getContext());
+      db.sandwichDao().tutorialDelete(tutorialPosition);
+    });
+    doTutorial(tutorialPosition++);
   }
 
 

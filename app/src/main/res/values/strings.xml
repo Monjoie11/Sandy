@@ -22,4 +22,15 @@
   <string name="tutorial_no1">I know who you are and I\'ve seen where you sleep. Do not lie to me again.</string>
   <string name="tutorial_no2">Some people just don\'t appreciate the Chip Butty. Deleting</string>
   <string name="tutorial_no3">That was an ice cream SANDWICH, but I\'ll respect your prejudice - deleting</string>
+  <string name="tutorial_no4">Yes, it does appear the chef was missing a step.</string>
+  <string name="tutorial_no5">Oh come on, a sub isn\'t a sandwich?! Fine, have it your way.</string>
+  <string name="tutorial_no6">Oh really? I always took you for someone who enjoyed a good wiener.</string>
+  <string name="tutorial_no7">Yes, the dessert taco does seem like a bit of a stretch</string>
+  <string name="tutorial_no8">If you had tried to get cute, that knuckle sandwich would have been for you</string>
+  <string name="tutorial_no9">I take it you more of a structural purist. Small minds fear ew ideas.</string>
+  <string name="tutorial_no10">I get it; you\'re a two pieces of bread kind of person.</string>
+  <string name="tutorial_no11">Had you clicked yes, I would have alerted authorities and had you committed.</string>
+  <string name="tutorial_no12">Personally, I love to eat cat. But maybe I\'m a pervert.</string>
+  <string name="tutorial_no13">Your answers have been inconsistent. Restarting tutorial</string>
+  <string name="tutorial_no14">Congratulations, you have trained me well. Let\'s eat!</string>
 </resources>
