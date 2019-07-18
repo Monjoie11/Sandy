@@ -1,11 +1,13 @@
 package com.learning.sandwich.sandy;
 
+import android.content.AsyncQueryHandler;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
+import android.os.AsyncTask;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -20,11 +22,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.preference.PreferenceManager;
 import androidx.lifecycle.ViewModelProviders;
+import com.google.android.material.snackbar.Snackbar;
 import com.learning.sandwich.sandy.model.Sandwich;
+import com.learning.sandwich.sandy.model.dao.SandwichDao;
 import java.util.List;
 import java.util.Random;
+import com.learning.sandwich.sandy.model.dao.SandwichDao;
 
-public class ResponseFragment extends Fragment {
+public class ResponseFragment extends Fragment{
 
 
   private ImageButton yesButton;
@@ -42,7 +47,7 @@ public class ResponseFragment extends Fragment {
   private Sandwich sandwich;
 
 
-  public ResponseFragment() {
+  public ResponseFragment()  {
     // Required (because I copied straight outta at the movies) empty public constructor
   }
 
@@ -74,27 +79,62 @@ public class ResponseFragment extends Fragment {
     responseImage.setImageBitmap(bmp);
     noButton = view.findViewById(R.id.no_button);
     noButton.setOnClickListener(v -> {
-      if (tutorialPosition == 0 && !sharedPref
+      if(!sharedPref
           .getBoolean(getString(R.string.saved_tutorial_complete_key), false)) {
-        Toast.makeText(getContext(), getString(R.string.first_screen_no),
-            Toast.LENGTH_LONG).show();
-      } else if (tutorialPosition > 0 && tutorialPosition < 12) {
-        Toast.makeText(getContext(), "Not a sandwich - discarding recipe",
-            Toast.LENGTH_LONG).show();
-        sandwich.setHumanEat(false);
-        viewModel.updateHumanEat(sandwich);
-        doTutorial(tutorialPosition++);
-      } else if (tutorialPosition == 12) {
-        Toast.makeText(getContext(), "Discarding recipe. TUTORIAL COMPLETE",
-            Toast.LENGTH_LONG).show();
-        sandwich.setHumanEat(false);
-        viewModel.updateHumanEat(sandwich);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putBoolean(getString(R.string.saved_tutorial_complete_key), true);
-        editor.apply();
-        tutorialPosition++;
+        switch(tutorialPosition){
+          case 0:  Snackbar snackbarNo = Snackbar.make(view, getString(R.string.tutorial_no0), Snackbar.LENGTH_LONG);
+            snackbarNo.show();
+            break;
+          case 1: Snackbar snackbarNo1 = Snackbar.make(view, getString(R.string.tutorial_no1), Snackbar.LENGTH_LONG);
+            snackbarNo1.show();
+            doTutorial(tutorialPosition++);
+            break;
+          case 2: Snackbar snackbarNo2 = Snackbar.make(view, getString(R.string.tutorial_no2), Snackbar.LENGTH_LONG);
+            snackbarNo2.show();
+            sandwich.setHumanEat(false);
+            viewModel.updateHumanEat(sandwich);
+            new Thread(() -> {
+             SandyDatabase db = SandyDatabase.getInstance(getContext());
+             db.sandwichDao().tutorialDelete(tutorialPosition);
+            });
+            doTutorial(tutorialPosition++);
+          case 3: Snackbar snackbarNo3 = Snackbar.make(view, getString(R.string.tutorial_no3), Snackbar.LENGTH_LONG);
+            snackbarNo3.show();
+            sandwich.setHumanEat(false);
+            viewModel.updateHumanEat(sandwich);
+            new Thread(() -> {
+              SandyDatabase db = SandyDatabase.getInstance(getContext());
+              db.sandwichDao().tutorialDelete(tutorialPosition);
+            });
+            doTutorial(tutorialPosition++);
+
+
+
+        }
+        if (tutorialPosition == 0) {
+          Snackbar snackbar = Snackbar
+              .make(view, getString(R.string.tutorial_no0), Snackbar.LENGTH_LONG);
+          snackbar.show();
+
+
+        } else if (tutorialPosition > 0 && tutorialPosition < 12) {
+          Toast.makeText(getContext(), "Not a sandwich - discarding recipe",
+              Toast.LENGTH_LONG).show();
+          sandwich.setHumanEat(false);
+          viewModel.updateHumanEat(sandwich);
+          doTutorial(tutorialPosition++);
+        } else if (tutorialPosition == 12) {
+          Toast.makeText(getContext(), "Discarding recipe. TUTORIAL COMPLETE",
+              Toast.LENGTH_LONG).show();
+          sandwich.setHumanEat(false);
+          viewModel.updateHumanEat(sandwich);
+          SharedPreferences.Editor editor = sharedPref.edit();
+          editor.putBoolean(getString(R.string.saved_tutorial_complete_key), true);
+          editor.apply();
+          tutorialPosition++;
+        }
       }
-      // TODO Do other stuff
+      // TODO wrap current if statement inside an of if on shared pref do tutorial else do logic stuff.
     });
     yesButton = view.findViewById(R.id.yes_button);
     yesButton.setOnClickListener(v -> {

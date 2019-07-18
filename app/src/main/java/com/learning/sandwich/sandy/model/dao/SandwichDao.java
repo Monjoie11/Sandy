@@ -27,6 +27,9 @@ public interface SandwichDao {
   @Delete
   int delete(Sandwich... sandwiches);
 
+  @Query("DELETE FROM sandwich WHERE sandwich_style = :tutorialPosition")
+  int tutorialDelete(int tutorialPosition);
+
   @Update
   int updateHumanEat(Sandwich... sandwiches);
 

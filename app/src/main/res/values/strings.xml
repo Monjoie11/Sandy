@@ -18,5 +18,8 @@
   <string name="request_permission">This sample needs camera permission.</string>
   <string name="camera_error">This device doesn\'t support Camera2 API.</string>
   <string name="intro_message">This is an intro message I\'ve included because they voices told me to.</string>
-  <string name="first_screen_no">Watch where you put that finger. I said touch my buns.</string>
+  <string name="tutorial_no0">Watch where you put that finger. I said touch my buns.</string>
+  <string name="tutorial_no1">I know who you are and I\'ve seen where you sleep. Do not lie to me again.</string>
+  <string name="tutorial_no2">Some people just don\'t appreciate the Chip Butty. Deleting</string>
+  <string name="tutorial_no3">That was an ice cream SANDWICH, but I\'ll respect your prejudice - deleting</string>
 </resources>
