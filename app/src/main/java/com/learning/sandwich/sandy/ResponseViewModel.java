@@ -24,7 +24,7 @@ public class ResponseViewModel extends AndroidViewModel {
     return sandwich;
   }
 
-  public LiveData<List<Response>> getActorsLiveData() {
+  public LiveData<List<Response>> getResponseLiveData() {
     return response;
   }
 
@@ -50,7 +50,7 @@ public class ResponseViewModel extends AndroidViewModel {
 
   }
 
-  public void updateHuamn(final Sandwich sandwich){
+  public void updateHumanEat(final Sandwich sandwich){
 
     new Thread(new Runnable() {
       @Override

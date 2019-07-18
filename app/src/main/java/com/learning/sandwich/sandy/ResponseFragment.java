@@ -76,19 +76,19 @@ public class ResponseFragment extends Fragment {
     noButton.setOnClickListener(v -> {
       if (tutorialPosition == 0 && !sharedPref
           .getBoolean(getString(R.string.saved_tutorial_complete_key), false)) {
-        Toast.makeText(getContext(), "Watch where you put that finger. I said touch my buns.",
+        Toast.makeText(getContext(), getString(R.string.first_screen_no),
             Toast.LENGTH_LONG).show();
       } else if (tutorialPosition > 0 && tutorialPosition < 12) {
         Toast.makeText(getContext(), "Not a sandwich - discarding recipe",
             Toast.LENGTH_LONG).show();
         sandwich.setHumanEat(false);
-        viewModel.updateHuamn(sandwich);
+        viewModel.updateHumanEat(sandwich);
         doTutorial(tutorialPosition++);
       } else if (tutorialPosition == 12) {
         Toast.makeText(getContext(), "Discarding recipe. TUTORIAL COMPLETE",
             Toast.LENGTH_LONG).show();
         sandwich.setHumanEat(false);
-        viewModel.updateHuamn(sandwich);
+        viewModel.updateHumanEat(sandwich);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putBoolean(getString(R.string.saved_tutorial_complete_key), true);
         editor.apply();
@@ -107,13 +107,13 @@ public class ResponseFragment extends Fragment {
         Toast.makeText(getContext(), "Adding recipe to repertoire",
             Toast.LENGTH_LONG).show();
         sandwich.setHumanEat(true);
-        viewModel.updateHuamn(sandwich);
+        viewModel.updateHumanEat(sandwich);
         doTutorial(tutorialPosition++);
       } else if (tutorialPosition == 12) {
         Toast.makeText(getContext(), "Final recipe added. TUTORIAL COMPLETE",
             Toast.LENGTH_LONG).show();
         sandwich.setHumanEat(true);
-        viewModel.updateHuamn(sandwich);
+        viewModel.updateHumanEat(sandwich);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putBoolean(getString(R.string.saved_tutorial_complete_key), true);
         editor.apply();
