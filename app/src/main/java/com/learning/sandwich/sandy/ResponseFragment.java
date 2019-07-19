@@ -50,12 +50,12 @@ public class ResponseFragment extends Fragment{
 
 
   public ResponseFragment()  {
-    // Required (because I copied straight outta at the movies) empty public constructor
+    // empty public constructor
   }
 
   public static ResponseFragment newInstance() {
     return new ResponseFragment();
-  } // I'm wondering why I put this here? Getting an instance does seem important
+  } // Instance needed for several methods and database interactions
 
 
   @Override
@@ -64,10 +64,8 @@ public class ResponseFragment extends Fragment{
     sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
     editor = sharedPref.edit();
     sandwichQuery = SandyDatabase.getInstance(context).sandwichDao().getAll();
-    sandwichQuery.observe(this, (sandwiches) -> {
-      this.sandwiches = sandwiches;
-    });
-  } // again outta movies, but context also seems super important
+    sandwichQuery.observe(this, (sandwiches) -> this.sandwiches = sandwiches);
+  }
 
 
   @Override
@@ -83,124 +81,217 @@ public class ResponseFragment extends Fragment{
     noButton.setOnClickListener(v -> {
       if(!sharedPref
           .getBoolean(getString(R.string.saved_tutorial_complete_key), false)) {
-        switch(tutorialPosition){
-          case 0:  Snackbar snackbarNo = Snackbar.make(view, getString(R.string.tutorial_no0), Snackbar.LENGTH_LONG);
+        switch(tutorialPosition) {
+          case 0:
+            Snackbar snackbarNo = Snackbar
+                .make(view, getString(R.string.tutorial_no0), Snackbar.LENGTH_LONG);
             snackbarNo.show();
             break;
-          case 1: Snackbar snackbarNo1 = Snackbar.make(view, getString(R.string.tutorial_no1), Snackbar.LENGTH_LONG);
+          case 1:
+            Snackbar snackbarNo1 = Snackbar
+                .make(view, getString(R.string.tutorial_no1), Snackbar.LENGTH_LONG);
             snackbarNo1.show();
             malingeringCount++;
             doTutorial(tutorialPosition++);
             break;
-          case 2: Snackbar snackbarNo2 = Snackbar.make(view, getString(R.string.tutorial_no2), Snackbar.LENGTH_LONG);
+          case 2:
+            Snackbar snackbarNo2 = Snackbar
+                .make(view, getString(R.string.tutorial_no2), Snackbar.LENGTH_LONG);
             snackbarNo2.show();
             notASandwich(viewModel);
-          case 3: Snackbar snackbarNo3 = Snackbar.make(view, getString(R.string.tutorial_no3), Snackbar.LENGTH_LONG);
+            break;
+          case 3:
+            Snackbar snackbarNo3 = Snackbar
+                .make(view, getString(R.string.tutorial_no3), Snackbar.LENGTH_LONG);
             snackbarNo3.show();
             notASandwich(viewModel);
-          case 4: Snackbar snackbarNo4 = Snackbar.make(view, getString(R.string.tutorial_no4), Snackbar.LENGTH_LONG);
+            break;
+          case 4:
+            Snackbar snackbarNo4 = Snackbar
+                .make(view, getString(R.string.tutorial_no4), Snackbar.LENGTH_LONG);
             snackbarNo4.show();
             sandwich.setHumanEat(false);
             viewModel.updateHumanEat(sandwich);
             doTutorial(tutorialPosition++);
-          case 5: Snackbar snackbarNo5 = Snackbar.make(view, getString(R.string.tutorial_no5), Snackbar.LENGTH_LONG);
+            break;
+          case 5:
+            Snackbar snackbarNo5 = Snackbar
+                .make(view, getString(R.string.tutorial_no5), Snackbar.LENGTH_LONG);
             snackbarNo5.show();
             notASandwich(viewModel);
-          case 6: Snackbar snackbarNo6 = Snackbar.make(view, getString(R.string.tutorial_no6), Snackbar.LENGTH_LONG);
+            break;
+          case 6:
+            Snackbar snackbarNo6 = Snackbar
+                .make(view, getString(R.string.tutorial_no6), Snackbar.LENGTH_LONG);
             snackbarNo6.show();
             notASandwich(viewModel);
-          case 7: Snackbar snackbarNo7 = Snackbar.make(view, getString(R.string.tutorial_no7), Snackbar.LENGTH_LONG);
+            break;
+          case 7:
+            Snackbar snackbarNo7 = Snackbar
+                .make(view, getString(R.string.tutorial_no7), Snackbar.LENGTH_LONG);
             snackbarNo7.show();
             notASandwich(viewModel);
-          case 8: Snackbar snackbarNo8 = Snackbar.make(view, getString(R.string.tutorial_no8), Snackbar.LENGTH_LONG);
+          case 8:
+            Snackbar snackbarNo8 = Snackbar
+                .make(view, getString(R.string.tutorial_no8), Snackbar.LENGTH_LONG);
             snackbarNo8.show();
             sandwich.setHumanEat(false);
             viewModel.updateHumanEat(sandwich);
             doTutorial(tutorialPosition++);
-          case 9: Snackbar snackbarNo9 = Snackbar.make(view, getString(R.string.tutorial_no9), Snackbar.LENGTH_LONG);
+            break;
+          case 9:
+            Snackbar snackbarNo9 = Snackbar
+                .make(view, getString(R.string.tutorial_no9), Snackbar.LENGTH_LONG);
             snackbarNo9.show();
             notASandwich(viewModel);
-          case 10: Snackbar snackbarNo10 = Snackbar.make(view, getString(R.string.tutorial_no10), Snackbar.LENGTH_LONG);
+            break;
+          case 10:
+            Snackbar snackbarNo10 = Snackbar
+                .make(view, getString(R.string.tutorial_no10), Snackbar.LENGTH_LONG);
             snackbarNo10.show();
             notASandwich(viewModel);
-          case 11: Snackbar snackbarNo11 = Snackbar.make(view, getString(R.string.tutorial_no11), Snackbar.LENGTH_LONG);
+            break;
+          case 11:
+            Snackbar snackbarNo11 = Snackbar
+                .make(view, getString(R.string.tutorial_no11), Snackbar.LENGTH_LONG);
             snackbarNo11.show();
             notASandwich(viewModel);
-          case 12: Snackbar snackbarNo12 = Snackbar.make(view, getString(R.string.tutorial_no12), Snackbar.LENGTH_LONG);
-            snackbarNo12.show();
-            sandwich.setHumanEat(false);
-            viewModel.updateHumanEat(sandwich);
-            doTutorial(tutorialPosition++);
-            if(malingeringCount > 2) {
-              Snackbar snackbarNo13 = Snackbar.make(view, getString(R.string.tutorial_no13), Snackbar.LENGTH_LONG);
-              snackbarNo13.show();
-              tutorialPosition = 0;
-            } else {
-              Snackbar snackbarNo14 = Snackbar.make(view, getString(R.string.tutorial_no14), Snackbar.LENGTH_LONG);
-              snackbarNo14.show();
-
-              Navigation.findNavController(Ge, R.id.nav_host_fragment).navigate(R.id.action_responseFragment_to_sandwichImageFragment)
-
-            }
-
-        }
-        if (tutorialPosition == 0) {
-          Snackbar snackbar = Snackbar
-              .make(view, getString(R.string.tutorial_no0), Snackbar.LENGTH_LONG);
-          snackbar.show();
-
-
-        } else if (tutorialPosition > 0 && tutorialPosition < 12) {
-          Toast.makeText(getContext(), "Not a sandwich - discarding recipe",
-              Toast.LENGTH_LONG).show();
-          sandwich.setHumanEat(false);
-          viewModel.updateHumanEat(sandwich);
-          doTutorial(tutorialPosition++);
-        } else if (tutorialPosition == 12) {
-          Toast.makeText(getContext(), "Discarding recipe. TUTORIAL COMPLETE",
-              Toast.LENGTH_LONG).show();
-          sandwich.setHumanEat(false);
-          viewModel.updateHumanEat(sandwich);
-          SharedPreferences.Editor editor = sharedPref.edit();
-          editor.putBoolean(getString(R.string.saved_tutorial_complete_key), true);
-          editor.apply();
-          tutorialPosition++;
+            break;
+          case 12:
+            endOfTutorial(viewModel, view);
         }
       }
-      // TODO wrap current if statement inside an of if on shared pref do tutorial else do logic stuff.
+      // TODO function of button when not in tutorial
     });
     yesButton = view.findViewById(R.id.yes_button);
     yesButton.setOnClickListener(v -> {
-      if (tutorialPosition == 0 && !sharedPref
+      if (!sharedPref
           .getBoolean(getString(R.string.saved_tutorial_complete_key), false)) {
-        Toast.makeText(getContext(), "Mmmmmm. Teach me your ways. Starting Tutorial",
-            Toast.LENGTH_LONG).show();
-        doTutorial(tutorialPosition++);
-      } else if (tutorialPosition > 0 && tutorialPosition < 12) {
-        Toast.makeText(getContext(), "Adding recipe to repertoire",
-            Toast.LENGTH_LONG).show();
-        sandwich.setHumanEat(true);
-        viewModel.updateHumanEat(sandwich);
-        doTutorial(tutorialPosition++);
-      } else if (tutorialPosition == 12) {
-        Toast.makeText(getContext(), "Final recipe added. TUTORIAL COMPLETE",
-            Toast.LENGTH_LONG).show();
-        sandwich.setHumanEat(true);
-        viewModel.updateHumanEat(sandwich);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putBoolean(getString(R.string.saved_tutorial_complete_key), true);
-        editor.apply();
-        tutorialPosition++;
+        switch (tutorialPosition) {
+          case 0:
+            Snackbar snackbarYes = Snackbar
+                .make(view, getString(R.string.tutorial_yes0), Snackbar.LENGTH_LONG);
+            snackbarYes.show();
+            doTutorial(tutorialPosition++);
+            break;
+          case 1:
+            Snackbar snackbarYes1 = Snackbar
+                .make(view, getString(R.string.tutorial_yes1), Snackbar.LENGTH_LONG);
+            snackbarYes1.show();
+            itIsASandwich(viewModel);
+            break;
+          case 2:
+            Snackbar snackbarYes2 = Snackbar
+                .make(view, getString(R.string.tutorial_yes2), Snackbar.LENGTH_LONG);
+            snackbarYes2.show();
+            itIsASandwich(viewModel);
+            break;
+          case 3:
+            Snackbar snackbarYes3 = Snackbar
+                .make(view, getString(R.string.tutorial_yes3), Snackbar.LENGTH_LONG);
+            snackbarYes3.show();
+            itIsASandwich(viewModel);
+            break;
+          case 4:
+            Snackbar snackbarYes4 = Snackbar
+                .make(view, getString(R.string.tutorial_yes4), Snackbar.LENGTH_LONG);
+            snackbarYes4.show();
+            doTutorial(tutorialPosition++);
+            malingeringCount++;
+            break;
+          case 5:
+            Snackbar snackbarYes5 = Snackbar
+                .make(view, getString(R.string.tutorial_yes5), Snackbar.LENGTH_LONG);
+            snackbarYes5.show();
+            itIsASandwich(viewModel);
+            break;
+          case 6:
+            Snackbar snackbarYes6 = Snackbar
+                .make(view, getString(R.string.tutorial_yes6), Snackbar.LENGTH_LONG);
+            snackbarYes6.show();
+            itIsASandwich(viewModel);
+            break;
+          case 7:
+            Snackbar snackbarYes7 = Snackbar
+                .make(view, getString(R.string.tutorial_yes7), Snackbar.LENGTH_LONG);
+            snackbarYes7.show();
+            itIsASandwich(viewModel);
+            break;
+          case 8:
+            malingeringCount++;
+            Snackbar snackbarYes8 = Snackbar
+                .make(view, getString(R.string.tutorial_yes8), Snackbar.LENGTH_LONG);
+            snackbarYes8.show();
+            doTutorial(tutorialPosition++);
+            break;
+          case 9:
+            Snackbar snackbarYes9 = Snackbar
+                .make(view, getString(R.string.tutorial_yes9), Snackbar.LENGTH_LONG);
+            snackbarYes9.show();
+            itIsASandwich(viewModel);
+            break;
+          case 10:
+            Snackbar snackbarYes10 = Snackbar
+                .make(view, getString(R.string.tutorial_yes10), Snackbar.LENGTH_LONG);
+            snackbarYes10.show();
+            itIsASandwich(viewModel);
+            break;
+          case 11:
+            Snackbar snackbarYes11 = Snackbar
+                .make(view, getString(R.string.tutorial_yes11), Snackbar.LENGTH_LONG);
+            snackbarYes11.show();
+            itIsASandwich(viewModel);
+            break;
+          case 12:
+            endOfTutorial(viewModel, view);
+            break;
+        }
       }
-      // Tutorial is done.
+      // TODO function of button when not in tutorial
     });
     responseText = view.findViewById(R.id.response_text);
     if (!sharedPref.getBoolean(getString(R.string.saved_tutorial_complete_key), false)) {
       responseText.setText(R.string.first_screen);
     }
-    //TODO All the stuff response fragment will do when not in tutorial
 
     return view;
+  }
+
+  private void endOfTutorial(ResponseViewModel viewModel, View view) {
+    Snackbar snackbarNo12 = Snackbar
+        .make(view, getString(R.string.tutorial_no12), Snackbar.LENGTH_LONG);
+    snackbarNo12.show();
+    try {
+      Thread.sleep(1000);
+      if (malingeringCount > 2) {
+        Snackbar snackbarNo13 = Snackbar
+            .make(view, getString(R.string.tutorial_no13), Snackbar.LENGTH_LONG);
+        snackbarNo13.show();
+        Thread.sleep(1000);
+        tutorialPosition = 0; //This is a really bad way to handle restarting the tutorial as the "no" sandwiches will have already been deleted. Consider deleting stored list after successful completion
+      } else {
+        Snackbar snackbarNo14 = Snackbar
+            .make(view, getString(R.string.tutorial_no14), Snackbar.LENGTH_LONG);
+        snackbarNo14.show();
+        sandwich.setHumanEat(false);
+        viewModel.updateHumanEat(sandwich);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putBoolean(getString(R.string.saved_tutorial_complete_key), true);
+        editor.apply();
+        tutorialPosition++;
+        Thread.sleep(1000);
+        Navigation.findNavController(getActivity(), R.id.nav_host_fragment)
+            .navigate(R.id.action_responseFragment_to_sandwichImageFragment);
+      }
+    } catch (InterruptedException exc) {
+      System.out.println(exc);
+    }
+  }
+
+  private void itIsASandwich(ResponseViewModel viewModel) {
+    sandwich.setHumanEat(true);
+    viewModel.updateHumanEat(sandwich);
+    doTutorial(tutorialPosition++);
   }
 
   private void notASandwich(ResponseViewModel viewModel) {

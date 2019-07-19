@@ -26,11 +26,24 @@
   <string name="tutorial_no5">Oh come on, a sub isn\'t a sandwich?! Fine, have it your way.</string>
   <string name="tutorial_no6">Oh really? I always took you for someone who enjoyed a good wiener.</string>
   <string name="tutorial_no7">Yes, the dessert taco does seem like a bit of a stretch</string>
-  <string name="tutorial_no8">If you had tried to get cute, that knuckle sandwich would have been for you</string>
-  <string name="tutorial_no9">I take it you more of a structural purist. Small minds fear ew ideas.</string>
-  <string name="tutorial_no10">I get it; you\'re a two pieces of bread kind of person.</string>
+  <string name="tutorial_no8">If you had tried to get cute, that knuckle sandwich would have been for you.</string>
+  <string name="tutorial_no9">I take it you\'re more of a structural purist. Small minds fear new ideas.</string>
+  <string name="tutorial_no10">I get it; you\'re a two pieces of bread kind of person. Yes, I judging you.</string>
   <string name="tutorial_no11">Had you clicked yes, I would have alerted authorities and had you committed.</string>
   <string name="tutorial_no12">Personally, I love to eat cat. But maybe I\'m a pervert.</string>
   <string name="tutorial_no13">Your answers have been inconsistent. Restarting tutorial</string>
   <string name="tutorial_no14">Congratulations, you have trained me well. Let\'s eat!</string>
+  <string name="tutorial_yes0">Mmmmmm. Teach me your ways. Starting Tutorial</string>
+  <string name="tutorial_yes1">Confirmed structural purist; ingredient purist. Gleefully stroking my belly.</string>
+  <string name="tutorial_yes2">Confirmed Ingredient Neutral with Structural Purity. Salivating.</string>
+  <string name="tutorial_yes3">Born to be wild: Ingredient Rebel wth Structural Purity.</string>
+  <string name="tutorial_yes4">I have been lied to in the past. That doesn\'t mean it hurts any les when you do it.</string>
+  <string name="tutorial_yes5">Confirmed Structural Neutral, Ingredient Pure.</string>
+  <string name="tutorial_yes6">Sandwich Equanimity is found in the frank: True Neutral.</string>
+  <string name="tutorial_yes7">I love an open mind. Spread that cerebrum, Ingredient Rebel.</string>
+  <string name="tutorial_yes8">You keep lying to me, and I\'ll serve a knuckle sandwich self.</string>
+  <string name="tutorial_yes9">Willing to put your hands on anything: Structural Rebel, Ingredient Pure.</string>
+  <string name="tutorial_yes11">God Help Us. TOTAL SANDWICH ANARCHY.</string>
+  <string name="tutorial_yes10">Confirmed Structural Rebel, Ingredient Neutral, and Bona Fide Madman</string>
+  <string name="tutorial_yes12">You are an Unholy Monster. I am sending your location to Federal Authorities.</string>
 </resources>
