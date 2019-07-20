@@ -12,6 +12,20 @@ import java.util.List;
 @Dao
 public interface SandwichDao {
 
+String PRUNING_QUERY = 
+    "DELETE FROM "
+    + "    Sandwich "
+    + "WHERE "
+    + "    sandwich_style IN ( "
+    + "        SELECT "
+    + "            sandwich_style "
+    + "        FROM  "
+    + "            Sandwich  "
+    + "        WHERE  "
+    + "            sandwich_id <= 12  "
+    + "            AND NOT human_eat  "
+    + "            AND sandwich_id NOT IN (4, 8, 12) "
+    + "    )";
 
   @Insert
   void insert(Sandwich... sandwich);
@@ -27,8 +41,8 @@ public interface SandwichDao {
   @Delete
   int delete(Sandwich... sandwiches);
 
-  @Query("DELETE FROM sandwich WHERE sandwich_style = :tutorialPosition")
-  int tutorialDelete(int tutorialPosition);
+  @Query(PRUNING_QUERY)
+  int tutorialDelete();
 
   @Update
   int updateHumanEat(Sandwich... sandwiches);

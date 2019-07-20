@@ -279,6 +279,7 @@ public class ResponseFragment extends Fragment{
         editor.putBoolean(getString(R.string.saved_tutorial_complete_key), true);
         editor.apply();
         tutorialPosition++;
+        viewModel.pruneTutorial();
         Thread.sleep(1000);
         Navigation.findNavController(getActivity(), R.id.nav_host_fragment)
             .navigate(R.id.action_responseFragment_to_sandwichImageFragment);
@@ -297,10 +298,6 @@ public class ResponseFragment extends Fragment{
   private void notASandwich(ResponseViewModel viewModel) {
     sandwich.setHumanEat(false);
     viewModel.updateHumanEat(sandwich);
-    new Thread(() -> {
-      SandyDatabase db = SandyDatabase.getInstance(getContext());
-      db.sandwichDao().tutorialDelete(tutorialPosition);
-    });
     doTutorial(tutorialPosition++);
   }
 

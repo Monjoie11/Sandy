@@ -50,6 +50,17 @@ public class ResponseViewModel extends AndroidViewModel {
 
   }
 
+  public void pruneTutorial(){
+   new Thread(new Runnable() {
+     @Override
+     public void run() {
+       SandyDatabase db = SandyDatabase.getInstance(getApplication());
+       db.sandwichDao().tutorialDelete();
+     }
+   }).start();
+  }
+
+
   public void updateHumanEat(final Sandwich sandwich){
 
     new Thread(new Runnable() {
