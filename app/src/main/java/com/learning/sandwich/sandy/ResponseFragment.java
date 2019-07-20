@@ -268,7 +268,7 @@ public class ResponseFragment extends Fragment{
             .make(view, getString(R.string.tutorial_no13), Snackbar.LENGTH_LONG);
         snackbarNo13.show();
         Thread.sleep(1000);
-        tutorialPosition = 0; //This is a really bad way to handle restarting the tutorial as the "no" sandwiches will have already been deleted. Consider deleting stored list after successful completion
+        tutorialPosition = 0;
       } else {
         Snackbar snackbarNo14 = Snackbar
             .make(view, getString(R.string.tutorial_no14), Snackbar.LENGTH_LONG);
