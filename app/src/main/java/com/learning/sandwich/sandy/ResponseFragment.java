@@ -28,6 +28,7 @@ import com.learning.sandwich.sandy.model.Sandwich;
 import com.learning.sandwich.sandy.model.dao.SandwichDao;
 import com.learning.sandwich.sandy.service.ClarafaiService;
 import com.learning.sandwich.sandy.service.ClarafaiService.ClarifaiMakeModel;
+import com.learning.sandwich.sandy.service.ClarafaiService.ClarifaiPutImagesInModel;
 import java.util.List;
 import java.util.Random;
 import com.learning.sandwich.sandy.model.dao.SandwichDao;
@@ -328,14 +329,15 @@ public class ResponseFragment extends Fragment{
         tutorialPosition++;
         viewModel.pruneTutorial();
         Thread.sleep(1000);
-        ClarafaiService.ClarifaiMakeModel model = new ClarafaiService.ClarifaiMakeModel();
-        model.execute();
-        Navigation.findNavController(getActivity(), R.id.nav_host_fragment)
-            .navigate(R.id.action_responseFragment_to_sandwichImageFragment);
+        LiveData<List<Sandwich>> feedClarafi = viewModel.getSandwichForModel();
+        ClarafaiService.ClarifaiPutImagesInModel modelMaker = new ClarafaiService.getInstance().ClarifaiPutImagesInModel();
+        modelMaker.execute();
       }
     } catch (InterruptedException exc) {
       System.out.println(exc);
     }
+    Navigation.findNavController(getActivity(), R.id.nav_host_fragment)
+        .navigate(R.id.action_responseFragment_to_sandwichImageFragment);
   }
 
 

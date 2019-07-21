@@ -80,6 +80,11 @@ public class ResponseViewModel extends AndroidViewModel {
     return db.sandwichDao().findById(sandwichId);
   }
 
+  public LiveData<List<Sandwich>> getSandwichForModel() {
+    SandyDatabase db = SandyDatabase.getInstance(getApplication());
+    return db.sandwichDao().getAllNotResource();
+  }
+
 
   // after on click caseR.id.picture(); new ClarafaiTask(getContext(), playerId, SceneId).execute(mFile){
 

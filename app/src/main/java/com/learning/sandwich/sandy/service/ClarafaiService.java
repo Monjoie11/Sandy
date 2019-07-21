@@ -3,6 +3,7 @@ package com.learning.sandwich.sandy.service;
 import android.app.Activity;
 import android.content.Context;
 import android.os.AsyncTask;
+import android.view.View;
 import androidx.navigation.Navigation;
 import clarifai2.api.ClarifaiBuilder;
 import clarifai2.api.ClarifaiClient;
@@ -15,6 +16,7 @@ import clarifai2.dto.model.output.ClarifaiOutput;
 import clarifai2.dto.model.output_info.ConceptOutputInfo;
 import clarifai2.dto.prediction.Concept;
 import clarifai2.dto.prediction.Prediction;
+import com.google.android.material.snackbar.Snackbar;
 import com.learning.sandwich.sandy.MainActivity;
 import com.learning.sandwich.sandy.R;
 import com.learning.sandwich.sandy.model.Sandwich;
@@ -35,6 +37,7 @@ public class ClarafaiService {
   private String modelId;
   private boolean trained;
   private String modelVersionId;
+  private static ClarafaiService soleInstance;
 
   final ClarifaiClient client = new ClarifaiBuilder("132545b0eb9b4f339c26f90afd403fff")
       .client(new OkHttpClient.Builder()
@@ -46,10 +49,17 @@ public class ClarafaiService {
       )
       .buildSync();
 
+  private ClarafaiService(){}
+
+  public static ClarafaiService getInstance(){
+    if(soleInstance == null){
+      soleInstance = new ClarafaiService();
+    }
+    return soleInstance;
+  }
 
 
-
-  public class ClarifaiMakeModel extends
+  public class ClarifaiPutImagesInModel extends
       AsyncTask<Sandwich, Void, ClarifaiResponse<List<ClarifaiInput>>> {
 
 
@@ -69,12 +79,14 @@ public class ClarafaiService {
     @Override
     protected void onPostExecute(ClarifaiResponse<List<ClarifaiInput>> response) {
       if (response.isSuccessful()) {
-
+  //      new ClarafaiCreateModel().execute();
+      } else {
+       //TODO figure out how to show a snackbar/toast without reference to a view
       }
     }
   }
 
-  private class CreateModel extends AsyncTask<Void, Void, String> {
+  private class ClarafaiCreateModel extends AsyncTask<Void, Void, String> {
 
     @Override
     protected String doInBackground(Void... voids) {
@@ -102,7 +114,7 @@ public class ClarafaiService {
   }
 
 
-  public class ClarifaiTrainModel extends AsyncTask<Void, Void, Model<?>> {
+  private class ClarifaiTrainModel extends AsyncTask<Void, Void, Model<?>> {
 
 
     @Override
@@ -121,6 +133,7 @@ public class ClarafaiService {
     protected void onPostExecute(Model<?> model) {
       trained = true;
       modelVersionId = model.modelVersion().id();
+      //TODO figure out how to call fragment navigation on post execute;
 //      Navigation.findNavController(, R.id.nav_host_fragment)
 //          .navigate(R.id.action_responseFragment_to_sandwichImageFragment);
     }
