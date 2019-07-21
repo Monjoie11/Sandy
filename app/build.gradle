@@ -58,7 +58,7 @@ dependencies {
 
     implementation 'com.squareup.picasso:picasso:2.71828'
 
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.14.2'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.0.1'
 
     
     
@@ -71,12 +71,77 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
 
     implementation 'com.clarifai.clarifai-api2:core:2.3.0'
+
+   
     
 //   Sadness and heartache should be inserted here. Note: Sadness has been
 //    deprecated and will be replaced by soul-crushing failure in July of 2019
 
 }
 
-repositories {
-    mavenCentral()
+buildscript {
+    repositories {
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+    dependencies {
+        classpath(
+                "gradle.plugin.com.palantir.gradle.gitversion:gradle-git-version:0.5.3",
+                "com.github.ben-manes:gradle-versions-plugin:0.13.0",
+                "gradle.plugin.de.fuerstenau:BuildConfigPlugin:1.1.4",
+                "net.ltgt.gradle:gradle-apt-plugin:0.13",
+                "com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3",
+        )
+    }
+}
+subprojects {
+    apply plugin: "java"
+    apply plugin: "maven"
+    apply plugin: "idea"
+    apply plugin: "signing"
+    apply plugin: "com.palantir.git-version"
+    apply plugin: "com.github.ben-manes.versions"
+
+    sourceCompatibility = JavaVersion.VERSION_1_7
+    targetCompatibility = JavaVersion.VERSION_1_7
+
+    // Set the group and version across all subprojects to ensure consistency
+    group 'com.clarifai.clarifai-api2'
+    def details = versionDetails()
+    def tag = details.lastTag.replace(".dirty", "")
+    if (details.commitDistance != 0) {
+        tag = tag + '-' + details.gitHash
+    }
+    version tag
+    println("Computed version as: ${getVersion()}")
+
+    repositories {
+        mavenLocal()
+        jcenter()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+    }
+
+    ext.versions = [
+            autoValue: "1.5.2",
+            autoValueWith: "1.0.0",
+            customHashCodeEquals: "db3442d",
+            grpc: "1.17.1",
+            gson: "2.8.5",
+            javaxAnnotationApi: "1.3.2",
+            okhttp: "3.12.0",
+            protobuf: "3.6.1",
+            protobufJavaUtil: "3.6.1",
+
+            junit: "4.12",
+            junitRetryRule: "cbdd972",
+            slf4j: "1.7.21",
+    ]
+
+    ext.deps = [
+            nullityAnnotations: "org.jetbrains:annotations:16.0.3",
+    ]
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = "4.10.3"
 }

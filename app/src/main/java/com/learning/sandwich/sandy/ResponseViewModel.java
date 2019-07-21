@@ -5,6 +5,8 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
+import clarifai2.dto.input.ClarifaiInput;
+import clarifai2.dto.prediction.Concept;
 import com.learning.sandwich.sandy.model.Response;
 import com.learning.sandwich.sandy.model.Sandwich;
 import java.util.List;
@@ -77,5 +79,9 @@ public class ResponseViewModel extends AndroidViewModel {
     SandyDatabase db = SandyDatabase.getInstance(getApplication());
     return db.sandwichDao().findById(sandwichId);
   }
+
+
+  // after on click caseR.id.picture(); new ClarafaiTask(getContext(), playerId, SceneId).execute(mFile){
+
 }
 

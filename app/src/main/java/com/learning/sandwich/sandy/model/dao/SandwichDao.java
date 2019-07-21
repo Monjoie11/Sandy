@@ -34,6 +34,9 @@ String PRUNING_QUERY =
   @Query("Select * FROM sandwich")
   LiveData<List<Sandwich>> getAll();
 
+  @Query("SELECT * FROM sandwich WHERE NOT image_resource")
+  LiveData<List<Sandwich>> getAllNotResource();
+
 
   @Query("SELECT * FROM sandwich WHERE sandwich_id = :sandwichId")
   LiveData<Sandwich> findById(Long sandwichId);
