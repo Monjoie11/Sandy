@@ -1,7 +1,9 @@
 package com.learning.sandwich.sandy.service;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.AsyncTask;
+import androidx.navigation.Navigation;
 import clarifai2.api.ClarifaiBuilder;
 import clarifai2.api.ClarifaiClient;
 import clarifai2.api.ClarifaiResponse;
@@ -13,6 +15,8 @@ import clarifai2.dto.model.output.ClarifaiOutput;
 import clarifai2.dto.model.output_info.ConceptOutputInfo;
 import clarifai2.dto.prediction.Concept;
 import clarifai2.dto.prediction.Prediction;
+import com.learning.sandwich.sandy.MainActivity;
+import com.learning.sandwich.sandy.R;
 import com.learning.sandwich.sandy.model.Sandwich;
 import java.io.File;
 import java.util.LinkedList;
@@ -26,11 +30,8 @@ public class ClarafaiService {
 
   static final int REQUEST_TAKE_PHOTO = 1;
   private static final double CONFIDENCE_THRESHOLD = 0.50;
-  private String photoPath = null;
-  private String object;
   private HttpLoggingInterceptor.Logger logger;
   Context context;
-  private boolean backgroundResult;
   private String modelId;
   private boolean trained;
   private String modelVersionId;
@@ -46,52 +47,9 @@ public class ClarafaiService {
       .buildSync();
 
 
-  private class ClarifaiTask extends AsyncTask<File, Void, Boolean> {
-
-    private final PredictionListener listener;
-
-    private ClarifaiTask(
-        PredictionListener listener) {
-      this.listener = listener;
-    }
 
 
-    protected Boolean doInBackground(File... images) {
-      boolean match = false;
-      List<ClarifaiOutput<Concept>> predictionResults;
-      File image = images[0];
-      ModelVersion modelVersion = client.getModelVersionByID(modelId, modelVersionId)
-          .executeSync()
-          .get();
-
-      ClarifaiResponse<List<ClarifaiOutput<Prediction>>> response = client.predict(modelId)
-          .withVersion(modelVersion)
-          .withInputs(ClarifaiInput.forImage(image))
-          .withMinValue(CONFIDENCE_THRESHOLD)
-          .executeSync();
-      if (response.isSuccessful()) {
-        List<Prediction> predictions = response.get().get(0).data();
-        if (predictions != null && !predictions.isEmpty()) {
-          Concept concept = predictions.get(0).asConcept().withName("sandwich");
-          if (concept != null) {
-            match = true;
-          }
-        }
-
-      } else {
-        cancel(true);
-      }
-      return match;
-
-    }
-
-    protected void onPostExecute(Boolean result) {
-     listener.onPrediction(result);
-    }
-
-  }
-
-  private class ClarifaiMakeModel extends
+  public class ClarifaiMakeModel extends
       AsyncTask<Sandwich, Void, ClarifaiResponse<List<ClarifaiInput>>> {
 
 
@@ -137,13 +95,14 @@ public class ClarafaiService {
     @Override
     protected void onPostExecute(String s) {
       modelId = s;
+      new ClarifaiTrainModel().execute();
     }
 
 
   }
 
 
-  private class ClarifaiTrainModel extends AsyncTask<Void, Void, Model<?>> {
+  public class ClarifaiTrainModel extends AsyncTask<Void, Void, Model<?>> {
 
 
     @Override
@@ -162,8 +121,56 @@ public class ClarafaiService {
     protected void onPostExecute(Model<?> model) {
       trained = true;
       modelVersionId = model.modelVersion().id();
+//      Navigation.findNavController(, R.id.nav_host_fragment)
+//          .navigate(R.id.action_responseFragment_to_sandwichImageFragment);
     }
   }
+
+  private class ClarifaiTask extends AsyncTask<File, Void, Boolean> {
+
+    private final PredictionListener listener;
+
+    private ClarifaiTask(
+        PredictionListener listener) {
+      this.listener = listener;
+    }
+
+
+    protected Boolean doInBackground(File... images) {
+      boolean match = false;
+      List<ClarifaiOutput<Concept>> predictionResults;
+      File image = images[0];
+      ModelVersion modelVersion = client.getModelVersionByID(modelId, modelVersionId)
+          .executeSync()
+          .get();
+
+      ClarifaiResponse<List<ClarifaiOutput<Prediction>>> response = client.predict(modelId)
+          .withVersion(modelVersion)
+          .withInputs(ClarifaiInput.forImage(image))
+          .withMinValue(CONFIDENCE_THRESHOLD)
+          .executeSync();
+      if (response.isSuccessful()) {
+        List<Prediction> predictions = response.get().get(0).data();
+        if (predictions != null && !predictions.isEmpty()) {
+          Concept concept = predictions.get(0).asConcept().withName("sandwich");
+          if (concept != null) {
+            match = true;
+          }
+        }
+
+      } else {
+        cancel(true);
+      }
+      return match;
+
+    }
+
+    protected void onPostExecute(Boolean result) {
+      listener.onPrediction(result);
+    }
+
+  }
+
 
   public interface PredictionListener{
 

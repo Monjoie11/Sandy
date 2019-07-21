@@ -26,6 +26,8 @@ import androidx.navigation.Navigation;
 import com.google.android.material.snackbar.Snackbar;
 import com.learning.sandwich.sandy.model.Sandwich;
 import com.learning.sandwich.sandy.model.dao.SandwichDao;
+import com.learning.sandwich.sandy.service.ClarafaiService;
+import com.learning.sandwich.sandy.service.ClarafaiService.ClarifaiMakeModel;
 import java.util.List;
 import java.util.Random;
 import com.learning.sandwich.sandy.model.dao.SandwichDao;
@@ -325,8 +327,9 @@ public class ResponseFragment extends Fragment{
         editor.apply();
         tutorialPosition++;
         viewModel.pruneTutorial();
-
         Thread.sleep(1000);
+        ClarafaiService.ClarifaiMakeModel model = new ClarafaiService.ClarifaiMakeModel();
+        model.execute();
         Navigation.findNavController(getActivity(), R.id.nav_host_fragment)
             .navigate(R.id.action_responseFragment_to_sandwichImageFragment);
       }
@@ -336,7 +339,7 @@ public class ResponseFragment extends Fragment{
   }
 
 
-  //I think the below methods could be deleted
+
   public Boolean getTutorialComplete() {
     return tutorialComplete;
   }
