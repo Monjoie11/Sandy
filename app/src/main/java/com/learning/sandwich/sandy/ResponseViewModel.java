@@ -4,16 +4,16 @@ import android.app.Application;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.ViewModel;
-import clarifai2.dto.input.ClarifaiInput;
-import clarifai2.dto.prediction.Concept;
+import androidx.lifecycle.MutableLiveData;
 import com.learning.sandwich.sandy.model.Response;
 import com.learning.sandwich.sandy.model.Sandwich;
 import java.util.List;
 
 public class ResponseViewModel extends AndroidViewModel {
+
   private LiveData<List<Response>> response;
   private LiveData<List<Sandwich>> sandwich;
+  private MutableLiveData<Boolean> pruneResult;
 
   public ResponseViewModel(@NonNull Application application) {
     super(application);
@@ -30,7 +30,7 @@ public class ResponseViewModel extends AndroidViewModel {
     return response;
   }
 
-  public void addSanwich(final Sandwich sandwich){
+  public void addSanwich(final Sandwich sandwich) {
     new Thread(new Runnable() {
       @Override
       public void run() {
@@ -40,30 +40,32 @@ public class ResponseViewModel extends AndroidViewModel {
     }).start();
   }
 
-  public void addResponse (final Response response){
+  public void addResponse(final Response response) {
 
     new Thread(new Runnable() {
       @Override
       public void run() {
-        SandyDatabase db =  SandyDatabase.getInstance(getApplication());
+        SandyDatabase db = SandyDatabase.getInstance(getApplication());
         db.responseDao().insert(response);
       }
     }).start();
 
   }
 
-  public void pruneTutorial(){
-   new Thread(new Runnable() {
-     @Override
-     public void run() {
-       SandyDatabase db = SandyDatabase.getInstance(getApplication());
-       db.sandwichDao().tutorialDelete();
-     }
-   }).start();
+  public LiveData<Boolean> pruneTutorial() {
+    if (pruneResult == null) {
+      pruneResult = new MutableLiveData<>();
+    }
+    new Thread(() -> {
+      SandyDatabase db = SandyDatabase.getInstance(getApplication());
+      db.sandwichDao().tutorialDelete();
+      pruneResult.postValue(true);
+    }).start();
+    return pruneResult;
   }
 
 
-  public void updateHumanEat(final Sandwich sandwich){
+  public void updateHumanEat(final Sandwich sandwich) {
 
     new Thread(new Runnable() {
       @Override
@@ -84,7 +86,6 @@ public class ResponseViewModel extends AndroidViewModel {
     SandyDatabase db = SandyDatabase.getInstance(getApplication());
     return db.sandwichDao().getAllNotResource();
   }
-
 
   // after on click caseR.id.picture(); new ClarafaiTask(getContext(), playerId, SceneId).execute(mFile){
 

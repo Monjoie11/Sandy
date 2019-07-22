@@ -6,6 +6,7 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -27,7 +28,7 @@ import com.learning.sandwich.sandy.service.ClarifaiService.ClarifaiPutImagesInMo
 import java.util.List;
 import java.util.Random;
 
-public class ResponseFragment extends Fragment{
+public class ResponseFragment extends Fragment {
 
 
   private ImageButton yesButton;
@@ -46,7 +47,7 @@ public class ResponseFragment extends Fragment{
   private int malingeringCount = 0;
 
 
-  public ResponseFragment()  {
+  public ResponseFragment() {
     // empty public constructor
   }
 
@@ -76,9 +77,9 @@ public class ResponseFragment extends Fragment{
     responseImage.setImageBitmap(bmp);
     noButton = view.findViewById(R.id.no_button);
     noButton.setOnClickListener(v -> {
-      if(!sharedPref
+      if (!sharedPref
           .getBoolean(getString(R.string.saved_tutorial_complete_key), false)) {
-        switch(tutorialPosition) {
+        switch (tutorialPosition) {
           case 0:
             Snackbar snackbarNo = Snackbar
                 .make(view, getString(R.string.tutorial_no0), Snackbar.LENGTH_LONG);
@@ -255,7 +256,6 @@ public class ResponseFragment extends Fragment{
   }
 
 
-
   private void itIsASandwich(ResponseViewModel viewModel) {
     sandwich.setHumanEat(true);
     viewModel.updateHumanEat(sandwich);
@@ -303,36 +303,41 @@ public class ResponseFragment extends Fragment{
     Snackbar snackbarNo12 = Snackbar
         .make(view, getString(R.string.tutorial_no12), Snackbar.LENGTH_LONG);
     snackbarNo12.show();
-    try {
-      Thread.sleep(1000);
-      if (malingeringCount > 2) {
-        Snackbar snackbarNo13 = Snackbar
-            .make(view, getString(R.string.tutorial_no13), Snackbar.LENGTH_LONG);
-        snackbarNo13.show();
-        Thread.sleep(1000);
-        tutorialPosition = 0;
-      } else {
-        Snackbar snackbarNo14 = Snackbar
-            .make(view, getString(R.string.tutorial_no14), Snackbar.LENGTH_LONG);
-        snackbarNo14.show();
-        sandwich.setHumanEat(false);
-        viewModel.updateHumanEat(sandwich);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putBoolean(getString(R.string.saved_tutorial_complete_key), true);
-        editor.apply();
-        tutorialPosition++;
-        viewModel.pruneTutorial();
-        Thread.sleep(1000);
-        List<Sandwich> feedClarifai = viewModel.getSandwichForModel().getValue();
-        ClarifaiService.ClarifaiPutImagesInModel modelMaker = new ClarifaiService.ClarifaiPutImagesInModel();
-        modelMaker.execute(feedClarifai.toArray(new Sandwich[0]));
-      }
-    } catch (InterruptedException exc) {
-      System.out.println(exc);
+    if (malingeringCount > 2) {
+      Snackbar snackbarNo13 = Snackbar
+          .make(view, getString(R.string.tutorial_no13), Snackbar.LENGTH_LONG);
+      snackbarNo13.show();
+      tutorialPosition = 0;
+    } else {
+      Snackbar snackbarNo14 = Snackbar
+          .make(view, getString(R.string.tutorial_no14), Snackbar.LENGTH_LONG);
+      snackbarNo14.show();
+      sandwich.setHumanEat(false);
+      viewModel.updateHumanEat(sandwich);
+      SharedPreferences.Editor editor = sharedPref.edit();
+      editor.putBoolean(getString(R.string.saved_tutorial_complete_key), true);
+      editor.apply();
+      tutorialPosition++;
+      viewModel.pruneTutorial().observe(this, (completed) -> {
+        Log.d(getClass().getName(), "Observe prune tutorial" + completed.toString());
+        if (completed) {
+          Log.d(getClass().getName(), "Observe if completed" + completed.toString());
+          viewModel.getSandwichForModel().observe(this, (sandwiches) -> {
+            Log.d(getClass().getName(), "Observe sandwich for model" + sandwiches.toString());
+            ClarifaiService.ClarifaiPutImagesInModel modelMaker = new ClarifaiService.ClarifaiPutImagesInModel();
+            modelMaker.execute(sandwiches.toArray(new Sandwich[0]));
+            Log.d(getClass().getName(), "Observe sandwich for model" + sandwiches.toString());
+          });
+        }
+      });
     }
     Navigation.findNavController(getActivity(), R.id.nav_host_fragment)
         .navigate(R.id.action_responseFragment_to_sandwichImageFragment);
   }
+
+
+
+
 
 
 
@@ -346,7 +351,3 @@ public class ResponseFragment extends Fragment{
 
 
 }
-
-
-
-

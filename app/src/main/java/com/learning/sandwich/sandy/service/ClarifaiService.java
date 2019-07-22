@@ -22,7 +22,9 @@ import okhttp3.logging.HttpLoggingInterceptor;
 
 
 /**
- *  This gorgeous class is comprised of four asynchronous classes which all make calls to the Clarifai image recognition service. It is a singleton, in that
+ *  This gorgeous class is comprised of four asynchronous classes which all make calls to the
+ *  Clarifai image recognition service. It is a singleton, in that only one instance of the object
+ *  can exist
  */
 public class ClarifaiService {
 
@@ -63,7 +65,7 @@ public class ClarifaiService {
 
     @Override
     protected ClarifaiResponse<List<ClarifaiInput>> doInBackground(Sandwich... sandwiches) {
-      List<ClarifaiInput> inputs = new LinkedList<ClarifaiInput>();
+      List<ClarifaiInput> inputs = new LinkedList<>();
       for (Sandwich sandwich : sandwiches) {
         ClarifaiInput input = ClarifaiInput.forImage(sandwich.getFileName())
             .withConcepts(Concept.forID("sandwich"));
@@ -77,7 +79,7 @@ public class ClarifaiService {
     @Override
     protected void onPostExecute(ClarifaiResponse<List<ClarifaiInput>> response) {
       if (response.isSuccessful()) {
- //       new ClarafaiCreateModel().execute();
+        new ClarafaiCreateModel().execute();
       } else {
        //TODO figure out how to show a snackbar/toast without reference to a view
       }
@@ -105,7 +107,7 @@ public class ClarifaiService {
     @Override
     protected void onPostExecute(String s) {
       modelId = s;
- //     new ClarifaiTrainModel().execute();
+      new ClarifaiTrainModel().execute();
     }
 
 
@@ -134,6 +136,7 @@ public class ClarifaiService {
       //TODO figure out how to call fragment navigation on post execute;
 //      Navigation.findNavController(, R.id.nav_host_fragment)
 //          .navigate(R.id.action_responseFragment_to_sandwichImageFragment);
+      //in constuctor create the interface listenerer pass lambda when task constructed 9ffom response fragment
     }
   }
 
