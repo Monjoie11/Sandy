@@ -6,12 +6,14 @@ import androidx.room.PrimaryKey;
 import java.io.Serializable;
 
 /**
- * This class is sad and lonely. It will include the attributes and accessors of of te response entity, which are now stored as string resourcs
+ * This class is sad and lonely. It will include the attributes and accessors of of te response
+ * entity, which are now stored as string resourcs
  */
 @Entity
 public class Response implements Serializable {
 
   private static final long serialVersionUID = 1L;
+
 
   @ColumnInfo(name = "response_id")
   @PrimaryKey
@@ -19,6 +21,14 @@ public class Response implements Serializable {
 
   @ColumnInfo(name = "response_category")
   private int responseCategory;
+
+  /**
+   * @param sandySpeaks This should never be used to genertae sandy's response, but code won;t
+   * compile without it
+   */
+  public void setSandySpeaks(String sandySpeaks) {
+    this.sandySpeaks = sandySpeaks;
+  }
 
   @ColumnInfo(name = "sandy_speaks")
   private String sandySpeaks;
@@ -52,7 +62,12 @@ public class Response implements Serializable {
     return sandySpeaks;
   }
 
-
+  /**
+   * @param responseId This should never be used to set respose ID but code won't cmpile without it
+   */
+  public void setResponseId(long responseId) {
+    this.responseId = responseId;
+  }
 
 
 }

@@ -13,6 +13,7 @@ public class Sandwich implements Serializable {
 
   private static final long serialVersionUID = 1L;
 
+
   @PrimaryKey(autoGenerate = true)
   @ColumnInfo(name = "sandwich_id")
   @SerializedName("id")
@@ -61,6 +62,14 @@ public class Sandwich implements Serializable {
    */
   public long getSandwichId() {
     return sandwichId;
+  }
+
+  /**
+   * @param sandwichId this method shuld never be used as id is autogenertaed, but code wn't compile
+   * without a setter
+   */
+  public void setSandwichId(long sandwichId) {
+    this.sandwichId = sandwichId;
   }
 
   /**

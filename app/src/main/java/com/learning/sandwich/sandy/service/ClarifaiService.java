@@ -24,7 +24,7 @@ import okhttp3.logging.HttpLoggingInterceptor;
 /**
  *  This gorgeous class is comprised of four asynchronous classes which all make calls to the
  *  Clarifai image recognition service. It is a singleton, in that only one instance of the object
- *  can exist
+ *  can exist. All fields and nested classes are static and are shared by subclasses
  */
 public class ClarifaiService {
 
@@ -36,6 +36,10 @@ public class ClarifaiService {
   private static ClarifaiService SOLEINSTANCE;
 
 
+  /**
+   * This is the Clarfai client used for interacting wth the Clarifai service with  superfluous
+   * OKHttp interceptor inserted
+   */
   static final ClarifaiClient client = new ClarifaiBuilder("132545b0eb9b4f339c26f90afd403fff")
       .client(new OkHttpClient.Builder()
           .connectTimeout(60, TimeUnit.SECONDS)
@@ -48,6 +52,10 @@ public class ClarifaiService {
 
   private ClarifaiService(){}
 
+  /**
+   * @return This method gts the instance of he Service class, which is superfluous now that all fields
+   * and nested classes are static, but I have trouble letting go
+   */
   public static ClarifaiService getInstance(){
     if(SOLEINSTANCE == null){
       SOLEINSTANCE = new ClarifaiService();
@@ -56,9 +64,12 @@ public class ClarifaiService {
   }
 
 
-
-
-
+  /**
+   * This class calls an asynchronous method that loads pictures into a given concept in Clarifai.
+   * It's onPostExecuteMethod invokes a subsequent asynchronous task that creates a model around those
+   * ages, and that class's onPostExecute invokes the final asynchronous task in the chain, which
+   * trains the model.
+   */
   public static class ClarifaiPutImagesInModel extends
       AsyncTask<Sandwich, Void, ClarifaiResponse<List<ClarifaiInput>>> {
 
@@ -140,6 +151,11 @@ public class ClarifaiService {
     }
   }
 
+  /**
+   * This class will be invoked from the SandwichImageFragment after a picture is taken. It was send
+   * that image to clarifai and return a response determining whether or not the image fits the
+   * trained sandwich model
+   */
   public static class ClarifaiTask extends AsyncTask<File, Void, Boolean> {
 
     private final PredictionListener listener;
@@ -186,6 +202,10 @@ public class ClarifaiService {
   }
 
 
+  /**
+   * This interface was created to be called from a lambda in the SandwichImageFragment to effect a
+   * response to the image classification
+   */
   public interface PredictionListener{
 
     void onPrediction(boolean match);
