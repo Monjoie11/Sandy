@@ -1,17 +1,14 @@
 package com.learning.sandwich.sandy;
 
-import android.content.AsyncQueryHandler;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
-import android.os.AsyncTask;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 import androidx.lifecycle.LiveData;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
@@ -25,13 +22,10 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.Navigation;
 import com.google.android.material.snackbar.Snackbar;
 import com.learning.sandwich.sandy.model.Sandwich;
-import com.learning.sandwich.sandy.model.dao.SandwichDao;
-import com.learning.sandwich.sandy.service.ClarafaiService;
-import com.learning.sandwich.sandy.service.ClarafaiService.ClarifaiMakeModel;
-import com.learning.sandwich.sandy.service.ClarafaiService.ClarifaiPutImagesInModel;
+import com.learning.sandwich.sandy.service.ClarifaiService;
+import com.learning.sandwich.sandy.service.ClarifaiService.ClarifaiPutImagesInModel;
 import java.util.List;
 import java.util.Random;
-import com.learning.sandwich.sandy.model.dao.SandwichDao;
 
 public class ResponseFragment extends Fragment{
 
@@ -329,9 +323,9 @@ public class ResponseFragment extends Fragment{
         tutorialPosition++;
         viewModel.pruneTutorial();
         Thread.sleep(1000);
-        LiveData<List<Sandwich>> feedClarafi = viewModel.getSandwichForModel();
-        ClarafaiService.ClarifaiPutImagesInModel modelMaker = new ClarafaiService.getInstance().ClarifaiPutImagesInModel();
-        modelMaker.execute();
+        List<Sandwich> feedClarifai = viewModel.getSandwichForModel().getValue();
+        ClarifaiService.ClarifaiPutImagesInModel modelMaker = new ClarifaiService.ClarifaiPutImagesInModel();
+        modelMaker.execute(feedClarifai.toArray(new Sandwich[0]));
       }
     } catch (InterruptedException exc) {
       System.out.println(exc);

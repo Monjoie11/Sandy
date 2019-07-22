@@ -68,6 +68,7 @@ import android.view.Surface;
 import android.view.TextureView;
 import android.widget.Toast;
 
+import com.learning.sandwich.sandy.service.ClarifaiService;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -848,6 +849,10 @@ public class SandwichImageFragment extends Fragment
           Log.d(TAG, mFile.toString());
           unlockFocus();
         }
+        //TODO Sort this shit out
+        // new ClarifaiService.ClarifaiTask()
+        //        .execute(mFile);
+
       };
 
       mCaptureSession.stopRepeating();

@@ -1,10 +1,6 @@
 package com.learning.sandwich.sandy.service;
 
-import android.app.Activity;
-import android.content.Context;
 import android.os.AsyncTask;
-import android.view.View;
-import androidx.navigation.Navigation;
 import clarifai2.api.ClarifaiBuilder;
 import clarifai2.api.ClarifaiClient;
 import clarifai2.api.ClarifaiResponse;
@@ -16,9 +12,6 @@ import clarifai2.dto.model.output.ClarifaiOutput;
 import clarifai2.dto.model.output_info.ConceptOutputInfo;
 import clarifai2.dto.prediction.Concept;
 import clarifai2.dto.prediction.Prediction;
-import com.google.android.material.snackbar.Snackbar;
-import com.learning.sandwich.sandy.MainActivity;
-import com.learning.sandwich.sandy.R;
 import com.learning.sandwich.sandy.model.Sandwich;
 import java.io.File;
 import java.util.LinkedList;
@@ -28,18 +21,20 @@ import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 
 
-public class ClarafaiService {
+/**
+ *  This gorgeous class is comprised of four asynchronous classes which all make calls to the Clarifai image recognition service. It is a singleton, in that
+ */
+public class ClarifaiService {
 
-  static final int REQUEST_TAKE_PHOTO = 1;
+
   private static final double CONFIDENCE_THRESHOLD = 0.50;
-  private HttpLoggingInterceptor.Logger logger;
-  Context context;
-  private String modelId;
-  private boolean trained;
-  private String modelVersionId;
-  private static ClarafaiService soleInstance;
+  private  static String modelId;
+  private static boolean trained;
+  private static String modelVersionId;
+  private static ClarifaiService SOLEINSTANCE;
 
-  final ClarifaiClient client = new ClarifaiBuilder("132545b0eb9b4f339c26f90afd403fff")
+
+  static final ClarifaiClient client = new ClarifaiBuilder("132545b0eb9b4f339c26f90afd403fff")
       .client(new OkHttpClient.Builder()
           .connectTimeout(60, TimeUnit.SECONDS)
           .readTimeout(60, TimeUnit.SECONDS)
@@ -49,17 +44,20 @@ public class ClarafaiService {
       )
       .buildSync();
 
-  private ClarafaiService(){}
+  private ClarifaiService(){}
 
-  public static ClarafaiService getInstance(){
-    if(soleInstance == null){
-      soleInstance = new ClarafaiService();
+  public static ClarifaiService getInstance(){
+    if(SOLEINSTANCE == null){
+      SOLEINSTANCE = new ClarifaiService();
     }
-    return soleInstance;
+    return SOLEINSTANCE;
   }
 
 
-  public class ClarifaiPutImagesInModel extends
+
+
+
+  public static class ClarifaiPutImagesInModel extends
       AsyncTask<Sandwich, Void, ClarifaiResponse<List<ClarifaiInput>>> {
 
 
@@ -79,14 +77,14 @@ public class ClarafaiService {
     @Override
     protected void onPostExecute(ClarifaiResponse<List<ClarifaiInput>> response) {
       if (response.isSuccessful()) {
-  //      new ClarafaiCreateModel().execute();
+ //       new ClarafaiCreateModel().execute();
       } else {
        //TODO figure out how to show a snackbar/toast without reference to a view
       }
     }
   }
 
-  private class ClarafaiCreateModel extends AsyncTask<Void, Void, String> {
+  private static class ClarafaiCreateModel extends AsyncTask<Void, Void, String> {
 
     @Override
     protected String doInBackground(Void... voids) {
@@ -107,14 +105,14 @@ public class ClarafaiService {
     @Override
     protected void onPostExecute(String s) {
       modelId = s;
-      new ClarifaiTrainModel().execute();
+ //     new ClarifaiTrainModel().execute();
     }
 
 
   }
 
 
-  private class ClarifaiTrainModel extends AsyncTask<Void, Void, Model<?>> {
+  private static class ClarifaiTrainModel extends AsyncTask<Void, Void, Model<?>> {
 
 
     @Override
@@ -139,7 +137,7 @@ public class ClarafaiService {
     }
   }
 
-  private class ClarifaiTask extends AsyncTask<File, Void, Boolean> {
+  public static class ClarifaiTask extends AsyncTask<File, Void, Boolean> {
 
     private final PredictionListener listener;
 
