@@ -7,12 +7,6 @@
   <string name="fb_login_protocol_scheme">fb314778556117982</string>
   <string name="first_screen">Hello, my name is Sandy. Before we chow down together, I have to get to know you. Touch my buns to proceed</string>
   <string name="saved_tutorial_complete_key">tutorial_key</string>
-  <string-array name="tutorial_questions">
-    <item>Is this a sandwich?</item>
-    <item>Okay smartie, is this a sandwich?</item>
-    <item>I don\'t care if you think you could fit this in your mouth\; is it a sandwich?</item>
-    <item>Sandwich, or not sandwich? That is the question.</item>
-  </string-array>
   <string name="picture">Picture</string>
   <string name="description_info">Info</string>
   <string name="request_permission">This sample needs camera permission.</string>
@@ -46,4 +40,11 @@
   <string name="tutorial_yes11">God Help Us. TOTAL SANDWICH ANARCHY.</string>
   <string name="tutorial_yes10">Confirmed Structural Rebel, Ingredient Neutral, and Bona Fide Madman</string>
   <string name="tutorial_yes12">You are an Unholy Monster. I am sending your location to Federal Authorities.</string>
+  <string name="auth_fail">unable to authenticate</string>
+  <string-array name="tutorial_questions">
+    <item>Is this a sandwich?</item>
+    <item>Okay smartie, is this a sandwich?</item>
+    <item>I don\'t care if you think you could fit this in your mouth\; is it a sandwich?</item>
+    <item>Sandwich, or not sandwich? That is the question.</item>
+  </string-array>
 </resources>

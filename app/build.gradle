@@ -9,9 +9,9 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        javaCompileOptions{
-            annotationProcessorOptions{
-                arguments = ["room.schemaLocation" :"$projectDir/schemas".toString()]
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
             }
         }
     }
@@ -38,13 +38,13 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     implementation 'com.facebook.stetho:stetho:1.5.1'
-    
+
 //    implementation 'com.facebook.android:facebook-login:[5,6)'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
     def nav_version = "2.0.0"
     implementation "androidx.navigation:navigation-fragment:$nav_version"
-    
-    
+
+
     // For Kotlin use navigation-fragment-ktx
     implementation 'androidx.room:room-runtime:2.1.0'
     annotationProcessor 'androidx.room:room-compiler:2.1.0'
@@ -60,20 +60,20 @@ dependencies {
 
     implementation 'com.squareup.okhttp3:logging-interceptor:4.0.1'
 
-    
-    
+
     testImplementation 'junit:junit:4.12'
-    
+
     androidTestImplementation 'androidx.arch.core:core-testing:2.0.1'
-    
+
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
 
     implementation 'com.clarifai.clarifai-api2:core:2.3.0'
 
-   
-    
+    implementation 'com.google.android.gms:play-services-auth:17.0.0'
+
+
 //   Sadness and heartache should be inserted here. Note: Sadness has been
 //    deprecated and will be replaced by soul-crushing failure in July of 2019
 
@@ -122,19 +122,19 @@ subprojects {
     }
 
     ext.versions = [
-            autoValue: "1.5.2",
-            autoValueWith: "1.0.0",
+            autoValue           : "1.5.2",
+            autoValueWith       : "1.0.0",
             customHashCodeEquals: "db3442d",
-            grpc: "1.17.1",
-            gson: "2.8.5",
-            javaxAnnotationApi: "1.3.2",
-            okhttp: "3.12.0",
-            protobuf: "3.6.1",
-            protobufJavaUtil: "3.6.1",
+            grpc                : "1.17.1",
+            gson                : "2.8.5",
+            javaxAnnotationApi  : "1.3.2",
+            okhttp              : "3.12.0",
+            protobuf            : "3.6.1",
+            protobufJavaUtil    : "3.6.1",
 
-            junit: "4.12",
-            junitRetryRule: "cbdd972",
-            slf4j: "1.7.21",
+            junit               : "4.12",
+            junitRetryRule      : "cbdd972",
+            slf4j               : "1.7.21",
     ]
 
     ext.deps = [
