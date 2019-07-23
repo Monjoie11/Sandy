@@ -1,6 +1,6 @@
 # What is a Sandwich?!
 
-## [Check Out the JavaDocs -- Fun for the Whole Family!](docs/api/index.html)
+## [Check Out the JavaDocs -- Fun for the Whole Family!](docs/api/overview-summary.html)
 
 ### The Best of Breads, the Worst of Breads - Please Read the Instructions (and excuses) for the [Final Milestone](docs/final_milestone.md)
 
