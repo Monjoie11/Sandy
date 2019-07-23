@@ -2,7 +2,7 @@
 
 ## [Check Out the JavaDocs -- Fun for the Whole Family!](file:///C:/Users/El%20Jefe/Desktop/bootcamp/projects/Sandy/docs/api/index.html)
 
-### The Best of Breads, the Worst of Breads - Please the Instructions (and excuses) for the [Final Milestone](docs/final_milestone.md)
+### The Best of Breads, the Worst of Breads - Please Read the Instructions (and excuses) for the [Final Milestone](docs/final_milestone.md)
 
 * IiaS or "Sandy" as the app is known around the globe, answers one of life's most profound existential questions: is it a sandwich?
 
