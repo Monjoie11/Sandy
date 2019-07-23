@@ -1,10 +1,14 @@
 # What is a Sandwich?!
 
+## [Check Out the JavaDocs -- Fun for the Whole Family!](file:///C:/Users/El%20Jefe/Desktop/bootcamp/projects/Sandy/docs/api/index.html)
+
+### The Best of Breads, the Worst of Breads - Please the Instructions (and excuses) for the [Final Milestone](docs/final_milestone.md)
+
 * IiaS or "Sandy" as the app is known around the globe, answers one of life's most profound existential questions: is it a sandwich?
 
 * It's most popular among teenagers, or those with a very teenage approach to the pondering of profound perplexities.
 
-* The app will use Facebook Sign-In as a means to access and sell your personal information (did I mention we love teenagers?). Users will then be able share their sandwiches on the social interwebs, with planned expansions of the app taking in shared images into Sandy's collective consciousness.
+* The app will use Google Sign-In as a means to access and sell your personal information (did I mention we love teenagers?). Users will then be able share their sandwiches on the social interwebs, with planned expansions of the app taking in shared images into Sandy's collective consciousness.
  
 * Sandy will download with a set of 90 images that will be used upon install to learn your sandwich philosophy.For example, is a burrito a sandwich in your world? 
 
@@ -17,6 +21,10 @@
 * Sandy will also employ an RNG to spit out really clever stuff, either critiquing (mocking) your taste in sandwiches or making ominous threats because she knows you're lying to her. And she always knows when you're lying... always.
 
 ##### Hot off the Presses: Read the Milestone 2 [State of the Sandwich Address](docs/milestone-2.md)
+
+
+####
+
 
 
 * [User stories](docs/user-stories.md)
