@@ -25,6 +25,12 @@ import com.learning.sandwich.sandy.service.ClarifaiService;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Few hemorrhoids have been a bigger pain in the ass than this ResponseFragment. It is the context
+ * from which users will interact with Sandy with Sandy, be it in te model creation tutorial, or in
+ * her analysis of captured images. It uses the same two buttons to perform changing, but related,
+ * functions with a combination of Snackbars and TextViews to guide the user as to how to respond.
+ */
 public class ResponseFragment extends Fragment {
 
 
@@ -42,10 +48,20 @@ public class ResponseFragment extends Fragment {
   private Sandwich sandwich;
   private int malingeringCount = 0;
 
+  /**
+   * @return A constructor used in creating an instance of ResponseFragment
+   */
   public static ResponseFragment newInstance() {
     return new ResponseFragment();
   } // Instance needed for several methods and database interactions
 
+  /**
+   * @param inflater This massive and unwieldly method is a required override in any fragment. It
+   * uses View, The Container, and the saved Instance of the fragment to inflate the layout frm
+   * which the magic happens. It also houses the ImageButton onClick listeners, and will, when all
+   * is said and done, be even larger. It relies on several private methods below to effect the
+   * changing function of the ImageButtons
+   */
   @Override
   public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
       @Nullable Bundle savedInstanceState) {

@@ -8,6 +8,11 @@ import androidx.room.PrimaryKey;
 import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 
+/**
+ * This class contains the attributes that comprise a sandwich object and a relevant setters and
+ * getters. It can be enjoyed in a bowl with milk (serializable...) and/or contains a UUID
+ * sufficient for transporting an object in and out of an ORM.
+ */
 @Entity
 public class Sandwich implements Serializable {
 
@@ -126,7 +131,7 @@ public class Sandwich implements Serializable {
   }
 
   /**
-   * @param fileName this method srets the boolean designating whether or not the user thinks the
+   * @param fileName this method sets the boolean designating whether or not the user thinks the
    * image is a sandwich
    */
   public void setFileName(String fileName) {

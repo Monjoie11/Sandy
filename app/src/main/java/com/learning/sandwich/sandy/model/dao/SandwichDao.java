@@ -66,8 +66,7 @@ public interface SandwichDao {
 
   /**
    * @return ths method returns a list of all sandwiches whose image reference is a URL and not a
-   * drawable resource. It is called after pruning to create a list to pass to the Clarifai
-   * service... theoretically.
+   * drawable resource and whose category is not one designated non-sandwich by the user
    */
   @Query(TRAINING_QUERY)
   LiveData<List<Sandwich>> getAllForTraining();

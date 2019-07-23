@@ -139,27 +139,44 @@ public class SandwichImageFragment extends Fragment
   private static final int MAX_PREVIEW_HEIGHT = 1080;
 
   /**
-   * {@link TextureView.SurfaceTextureListener} handles several lifecycle events on a
-   * {@link TextureView}.
+   * {@link TextureView.SurfaceTextureListener} handles several lifecycle events on a {@link
+   * TextureView}.
    */
   private final TextureView.SurfaceTextureListener mSurfaceTextureListener
       = new TextureView.SurfaceTextureListener() {
 
+    /**
+     * @param texture This method takes in texture, height and width to create an appropriately sized camera window
+     * @param width
+     * @param height
+     */
     @Override
     public void onSurfaceTextureAvailable(SurfaceTexture texture, int width, int height) {
       openCamera(width, height);
     }
 
+    /**
+     * @param texture This method takes in texture, height and width to create an appropriately sized camera window after the view dimensions have changed (such as te recycler view carousel or orentation change)
+     * @param width
+     * @param height
+     */
     @Override
     public void onSurfaceTextureSizeChanged(SurfaceTexture texture, int width, int height) {
       configureTransform(width, height);
     }
 
+    /**
+     * @param texture Confirms texture was destroyed as part of the OnDestroy lifecycle
+     * @return
+     */
     @Override
     public boolean onSurfaceTextureDestroyed(SurfaceTexture texture) {
       return true;
     }
 
+    /**
+     * @param texture Confirms texture was updated as part of lifecycle management
+     */
     @Override
     public void onSurfaceTextureUpdated(SurfaceTexture texture) {
     }
@@ -196,14 +213,19 @@ public class SandwichImageFragment extends Fragment
    */
   private final CameraDevice.StateCallback mStateCallback = new CameraDevice.StateCallback() {
 
+    /**
+     * @param cameraDevice This method is called when the camera is opened.  We start camera preview here.
+     */
     @Override
     public void onOpened(@android.support.annotation.NonNull CameraDevice cameraDevice) {
-      // This method is called when the camera is opened.  We start camera preview here.
       mCameraOpenCloseLock.release();
       mCameraDevice = cameraDevice;
       createCameraPreviewSession();
     }
 
+    /**
+     * @param cameraDevice This method is called when camera function of lifecycle management is interrupted
+     */
     @Override
     public void onDisconnected(@android.support.annotation.NonNull CameraDevice cameraDevice) {
       mCameraOpenCloseLock.release();
@@ -211,6 +233,10 @@ public class SandwichImageFragment extends Fragment
       mCameraDevice = null;
     }
 
+    /**
+     * @param cameraDevice This method is called to release the UI when the camera fragment errors
+     * @param error
+     */
     @Override
     public void onError(@android.support.annotation.NonNull CameraDevice cameraDevice, int error) {
       mCameraOpenCloseLock.release();
@@ -251,6 +277,9 @@ public class SandwichImageFragment extends Fragment
   private final ImageReader.OnImageAvailableListener mOnImageAvailableListener
       = new ImageReader.OnImageAvailableListener() {
 
+    /**
+     * @param reader this method calls the background handler to save an image (an auto focus feature that uses several images to retrieve the sharpest
+     */
     @Override
     public void onImageAvailable(ImageReader reader) {
       mBackgroundHandler.post(new ImageSaver(reader.acquireNextImage(), mFile));
@@ -342,13 +371,24 @@ public class SandwichImageFragment extends Fragment
       }
     }
 
+    /**
+     * @param session I'm gonna be honest, I have no idea, but its parameters can't be null. and it calls the above private method
+     * @param request which is a method for the management of the lifecycle of the capture process
+     * @param partialResult
+     */
     @Override
-    public void onCaptureProgressed(@android.support.annotation.NonNull CameraCaptureSession session,
+    public void onCaptureProgressed(
+        @android.support.annotation.NonNull CameraCaptureSession session,
         @android.support.annotation.NonNull CaptureRequest request,
         @android.support.annotation.NonNull CaptureResult partialResult) {
       process(partialResult);
     }
 
+    /**
+     * @param session calls the capture process to a close
+     * @param request
+     * @param result
+     */
     @Override
     public void onCaptureCompleted(@android.support.annotation.NonNull CameraCaptureSession session,
         @android.support.annotation.NonNull CaptureRequest request,
@@ -376,19 +416,18 @@ public class SandwichImageFragment extends Fragment
   }
 
   /**
-   * Given {@code choices} of {@code Size}s supported by a camera, choose the smallest one that
-   * is at least as large as the respective texture view size, and that is at most as large as the
+   * Given {@code choices} of {@code Size}s supported by a camera, choose the smallest one that is
+   * at least as large as the respective texture view size, and that is at most as large as the
    * respective max size, and whose aspect ratio matches with the specified value. If such size
-   * doesn't exist, choose the largest one that is at most as large as the respective max size,
-   * and whose aspect ratio matches with the specified value.
+   * doesn't exist, choose the largest one that is at most as large as the respective max size, and
+   * whose aspect ratio matches with the specified value.
    *
-   * @param choices           The list of sizes that the camera supports for the intended output
-   *                          class
-   * @param textureViewWidth  The width of the texture view relative to sensor coordinate
+   * @param choices The list of sizes that the camera supports for the intended output class
+   * @param textureViewWidth The width of the texture view relative to sensor coordinate
    * @param textureViewHeight The height of the texture view relative to sensor coordinate
-   * @param maxWidth          The maximum width that can be chosen
-   * @param maxHeight         The maximum height that can be chosen
-   * @param aspectRatio       The aspect ratio
+   * @param maxWidth The maximum width that can be chosen
+   * @param maxHeight The maximum height that can be chosen
+   * @param aspectRatio The aspect ratio
    * @return The optimal {@code Size}, or an arbitrary one if none were big enough
    */
   private static Size chooseOptimalSize(Size[] choices, int textureViewWidth,
@@ -428,12 +467,22 @@ public class SandwichImageFragment extends Fragment
     return new SandwichImageFragment();
   }
 
+  /**Method inherent to all fragments which inflates the view
+   * @param inflater
+   * @param container
+   * @param savedInstanceState
+   * @return
+   */
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
     return inflater.inflate(R.layout.sandwich_fragment, container, false);
   }
 
+  /**Lifecycle management method that sets onClickListener for the two buttons (information and capture image)
+   * @param view
+   * @param savedInstanceState
+   */
   @Override
   public void onViewCreated(final View view, Bundle savedInstanceState) {
     view.findViewById(R.id.picture).setOnClickListener(this);
@@ -441,12 +490,18 @@ public class SandwichImageFragment extends Fragment
     mTextureView = view.findViewById(R.id.texture);
   }
 
+  /**Methd that will restore a saved instance state when the mainActivity is called
+   * @param savedInstanceState
+   */
   @Override
   public void onActivityCreated(Bundle savedInstanceState) {
     super.onActivityCreated(savedInstanceState);
     mFile = new File(getActivity().getExternalFilesDir(null), "pic.jpg");
   }
 
+  /**
+   * Lifecycle management method that restores the instance state upon resume
+   */
   @Override
   public void onResume() {
     super.onResume();
@@ -463,6 +518,9 @@ public class SandwichImageFragment extends Fragment
     }
   }
 
+  /**
+   * Lifecycle management method that stop background processes on pause
+   */
   @Override
   public void onPause() {
     closeCamera();
@@ -478,8 +536,14 @@ public class SandwichImageFragment extends Fragment
     }
   }
 
+  /**
+   * @param requestCode
+   * @param permissions
+   * @param grantResults
+   */
   @Override
-  public void onRequestPermissionsResult(int requestCode, @android.support.annotation.NonNull String[] permissions,
+  public void onRequestPermissionsResult(int requestCode,
+      @android.support.annotation.NonNull String[] permissions,
       @android.support.annotation.NonNull int[] grantResults) {
     if (requestCode == REQUEST_CAMERA_PERMISSION) {
       if (grantResults.length != 1 || grantResults[0] != PackageManager.PERMISSION_GRANTED) {
@@ -494,7 +558,7 @@ public class SandwichImageFragment extends Fragment
   /**
    * Sets up member variables related to camera.
    *
-   * @param width  The width of available size for camera preview
+   * @param width The width of available size for camera preview
    * @param height The height of available size for camera preview
    */
   @SuppressWarnings("SuspiciousNameCombination")
@@ -703,7 +767,8 @@ public class SandwichImageFragment extends Fragment
           new CameraCaptureSession.StateCallback() {
 
             @Override
-            public void onConfigured(@android.support.annotation.NonNull CameraCaptureSession cameraCaptureSession) {
+            public void onConfigured(
+                @android.support.annotation.NonNull CameraCaptureSession cameraCaptureSession) {
               // The camera is already closed
               if (null == mCameraDevice) {
                 return;
@@ -740,11 +805,11 @@ public class SandwichImageFragment extends Fragment
   }
 
   /**
-   * Configures the necessary {@link android.graphics.Matrix} transformation to `mTextureView`.
-   * This method should be called after the camera preview size is determined in
-   * setUpCameraOutputs and also the size of `mTextureView` is fixed.
+   * Configures the necessary {@link android.graphics.Matrix} transformation to `mTextureView`. This
+   * method should be called after the camera preview size is determined in setUpCameraOutputs and
+   * also the size of `mTextureView` is fixed.
    *
-   * @param viewWidth  The width of `mTextureView`
+   * @param viewWidth The width of `mTextureView`
    * @param viewHeight The height of `mTextureView`
    */
   private void configureTransform(int viewWidth, int viewHeight) {
@@ -797,8 +862,8 @@ public class SandwichImageFragment extends Fragment
   }
 
   /**
-   * Run the precapture sequence for capturing a still image. This method should be called when
-   * we get a response in {@link #mCaptureCallback} from {@link #lockFocus()}.
+   * Run the precapture sequence for capturing a still image. This method should be called when we
+   * get a response in {@link #mCaptureCallback} from {@link #lockFocus()}.
    */
   private void runPrecaptureSequence() {
     try {
@@ -815,8 +880,8 @@ public class SandwichImageFragment extends Fragment
   }
 
   /**
-   * Capture a still picture. This method should be called when we get a response in
-   * {@link #mCaptureCallback} from both {@link #lockFocus()}.
+   * Capture a still picture. This method should be called when we get a response in {@link
+   * #mCaptureCallback} from both {@link #lockFocus()}.
    */
   private void captureStillPicture() {
     try {
@@ -842,7 +907,8 @@ public class SandwichImageFragment extends Fragment
           = new CameraCaptureSession.CaptureCallback() {
 
         @Override
-        public void onCaptureCompleted(@android.support.annotation.NonNull CameraCaptureSession session,
+        public void onCaptureCompleted(
+            @android.support.annotation.NonNull CameraCaptureSession session,
             @android.support.annotation.NonNull CaptureRequest request,
             @android.support.annotation.NonNull TotalCaptureResult result) {
           showToast("Saved: " + mFile);
@@ -878,8 +944,7 @@ public class SandwichImageFragment extends Fragment
   }
 
   /**
-   * Unlock the focus. This method should be called when still image capture sequence is
-   * finished.
+   * Unlock the focus. This method should be called when still image capture sequence is finished.
    */
   private void unlockFocus() {
     try {
@@ -1048,11 +1113,6 @@ public class SandwichImageFragment extends Fragment
   }
 
 }
-
-
-
-
-
 
 //  }
 //
