@@ -52,15 +52,15 @@ public class SandwichDaoTest {
     sandwich.setSandwichId(101);
     sandwich.setMachineEat(true);
     sandwich.setHumanEat(false);
- //   long id = dao.insert(sandwich);
-  //  assertTrue(id > 0);
+    //sandwichId = dao.insert(sandwich);
+    assertTrue(sandwichId > 0);
   }
 
   //we are testing to see if an exception is thrown when a null value is implemented
   @Test(expected = Exception.class)
   public void insertNullTitle() {
     Sandwich sandwich = new Sandwich();
-  //  long id = dao.insert(sandwich);
+    //long id = dao.insert(sandwich);
     fail("this shouldn't get here");
   }
 
