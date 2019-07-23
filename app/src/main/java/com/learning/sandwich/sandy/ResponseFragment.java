@@ -1,5 +1,20 @@
 package com.learning.sandwich.sandy;
 
+/*
+    Copyright 2019 Jeff Franken
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+*/
+
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -27,7 +42,7 @@ import java.util.Random;
 
 /**
  * Few hemorrhoids have been a bigger pain in the ass than this ResponseFragment. It is the context
- * from which users will interact with Sandy with Sandy, be it in te model creation tutorial, or in
+ * from which users will interact with Sandy, be it in te model creation tutorial, or in
  * her analysis of captured images. It uses the same two buttons to perform changing, but related,
  * functions with a combination of Snackbars and TextViews to guide the user as to how to respond.
  */
