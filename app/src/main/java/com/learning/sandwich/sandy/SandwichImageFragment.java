@@ -467,11 +467,8 @@ public class SandwichImageFragment extends Fragment
     return new SandwichImageFragment();
   }
 
-  /**Method inherent to all fragments which inflates the view
-   * @param inflater
-   * @param container
-   * @param savedInstanceState
-   * @return
+  /**
+   * Method inherent to all fragments which inflates the view
    */
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -479,9 +476,9 @@ public class SandwichImageFragment extends Fragment
     return inflater.inflate(R.layout.sandwich_fragment, container, false);
   }
 
-  /**Lifecycle management method that sets onClickListener for the two buttons (information and capture image)
-   * @param view
-   * @param savedInstanceState
+  /**
+   * Lifecycle management method that sets onClickListener for the two buttons (information and
+   * capture image)
    */
   @Override
   public void onViewCreated(final View view, Bundle savedInstanceState) {
@@ -490,8 +487,8 @@ public class SandwichImageFragment extends Fragment
     mTextureView = view.findViewById(R.id.texture);
   }
 
-  /**Methd that will restore a saved instance state when the mainActivity is called
-   * @param savedInstanceState
+  /**
+   * Methd that will restore a saved instance state when the mainActivity is called
    */
   @Override
   public void onActivityCreated(Bundle savedInstanceState) {
@@ -537,9 +534,7 @@ public class SandwichImageFragment extends Fragment
   }
 
   /**
-   * @param requestCode
-   * @param permissions
-   * @param grantResults
+   *
    */
   @Override
   public void onRequestPermissionsResult(int requestCode,
@@ -766,6 +761,9 @@ public class SandwichImageFragment extends Fragment
       mCameraDevice.createCaptureSession(Arrays.asList(surface, mImageReader.getSurface()),
           new CameraCaptureSession.StateCallback() {
 
+            /**Method reestablishes camera parameters upon user configuration change. If null, defaults restored
+             * @param cameraCaptureSession
+             */
             @Override
             public void onConfigured(
                 @android.support.annotation.NonNull CameraCaptureSession cameraCaptureSession) {
@@ -792,6 +790,9 @@ public class SandwichImageFragment extends Fragment
               }
             }
 
+            /**Catches the runtime exception of configuration change failure
+             * @param cameraCaptureSession
+             */
             @Override
             public void onConfigureFailed(
                 @android.support.annotation.NonNull CameraCaptureSession cameraCaptureSession) {
@@ -963,6 +964,10 @@ public class SandwichImageFragment extends Fragment
     }
   }
 
+  /**
+   * Methd called by the respective on click listeners using a switch statement to designate what
+   * action is taken dependent on what listener is called (clicked)
+   */
   @Override
   public void onClick(View view) {
     switch (view.getId()) {
@@ -983,6 +988,9 @@ public class SandwichImageFragment extends Fragment
     }
   }
 
+  /**
+   * Goddamn autoflash messing up my low-lite selfies
+   */
   private void setAutoFlash(CaptureRequest.Builder requestBuilder) {
     if (mFlashSupported) {
       requestBuilder.set(CaptureRequest.CONTROL_AE_MODE,
@@ -1009,6 +1017,9 @@ public class SandwichImageFragment extends Fragment
       mFile = file;
     }
 
+    /**
+     * Catches the various exceptions associated wth reading/writing an image into working memory
+     */
     @Override
     public void run() {
       ByteBuffer buffer = mImage.getPlanes()[0].getBuffer();
@@ -1055,6 +1066,10 @@ public class SandwichImageFragment extends Fragment
 
     private static final String ARG_MESSAGE = "message";
 
+    /**
+     * Method that creates an error dialogue and packs it in a nice little bundle to leave in the
+     * stockings of bad boys and girls on Christmas Day
+     */
     public static ErrorDialog newInstance(String message) {
       ErrorDialog dialog = new ErrorDialog();
       Bundle args = new Bundle();
@@ -1063,6 +1078,10 @@ public class SandwichImageFragment extends Fragment
       return dialog;
     }
 
+    /**
+     * Creates a dialogue by shouting slurs at the user in an attempt to reclaim hurtful language as
+     * its own
+     */
     @android.support.annotation.NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -1114,6 +1133,4 @@ public class SandwichImageFragment extends Fragment
 
 }
 
-//  }
-//
-//}
+

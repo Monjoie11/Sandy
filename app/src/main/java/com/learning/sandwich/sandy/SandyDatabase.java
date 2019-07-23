@@ -17,15 +17,32 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 
+/**
+ * An abstract cass that creates the foundation of te ORM, which can only be intialzed be the
+ * classes that call an instance thereof
+ */
 @Database(entities = {Sandwich.class, Response.class}, version = 1)
 public abstract class SandyDatabase extends RoomDatabase {
 
+  /**
+   * The instance of the database called in Dao's and viewmodels
+   */
   public static SandyDatabase INSTANCE;
 
+  /**
+   * @return An abstract field giving the Dao a reference to any SandyDatabase instance
+   */
   public abstract SandwichDao sandwichDao();
 
+  /**
+   * An abstract field giving the Dao a reference to any SandyDatabase instance
+   */
   public abstract ResponseDao responseDao();
 
+  /**
+   * Method that attaches a contect to a instance of the database and makes it available to other
+   * application classes
+   */
   public static SandyDatabase getInstance(Context context) {
     if (INSTANCE == null) {
       INSTANCE = Room
@@ -53,6 +70,10 @@ public abstract class SandyDatabase extends RoomDatabase {
       this.context = context;
     }
 
+    /** Method that takes JSON object raw data and populates the ORM with it
+     * @param voids
+     * @return
+     */
     @Override
     protected Void doInBackground(Void... voids) {
       Gson gson = new GsonBuilder().create();
