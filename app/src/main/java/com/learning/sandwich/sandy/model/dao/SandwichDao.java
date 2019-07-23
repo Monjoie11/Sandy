@@ -32,6 +32,24 @@ public interface SandwichDao {
           + "            AND sandwich_id NOT IN (4, 8, 12) "
           + "    )";
 
+  String TRAINING_QUERY =
+      "SELECT "
+          + "    * "
+          + "FROM "
+          + "    Sandwich "
+          + "WHERE "
+          + "    NOT image_resource "
+          + "    AND sandwich_style NOT IN ( "
+          + "        SELECT "
+          + "            sandwich_style "
+          + "        FROM  "
+          + "            Sandwich  "
+          + "        WHERE  "
+          + "            sandwich_id <= 12  "
+          + "            AND NOT human_eat  "
+          + "            AND sandwich_id NOT IN (4, 8, 12) "
+          + "    )";
+
   /**
    * @param sandwich this method will insert a sandwich in the sandwich entity
    */
@@ -51,8 +69,8 @@ public interface SandwichDao {
    * drawable resource. It is called after pruning to create a list to pass to the Clarifai
    * service... theoretically.
    */
-  @Query("SELECT * FROM sandwich WHERE NOT image_resource")
-  LiveData<List<Sandwich>> getAllNotResource();
+  @Query(TRAINING_QUERY)
+  LiveData<List<Sandwich>> getAllForTraining();
 
 
   /**

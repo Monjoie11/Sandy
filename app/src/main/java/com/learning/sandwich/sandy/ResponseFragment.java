@@ -1,30 +1,27 @@
 package com.learning.sandwich.sandy;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
-import android.util.Log;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.TextView;
-import androidx.lifecycle.LiveData;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
+import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.preference.PreferenceManager;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.Navigation;
 import com.google.android.material.snackbar.Snackbar;
 import com.learning.sandwich.sandy.model.Sandwich;
 import com.learning.sandwich.sandy.service.ClarifaiService;
-import com.learning.sandwich.sandy.service.ClarifaiService.ClarifaiPutImagesInModel;
 import java.util.List;
 import java.util.Random;
 
@@ -34,7 +31,7 @@ public class ResponseFragment extends Fragment {
   private ImageButton yesButton;
   private ImageButton noButton;
   private Random rng = new Random();
-  private ResponseViewModel mViewModel;
+  private ResponseViewModel viewModel;
   private ImageView responseImage;
   private TextView responseText;
   private SharedPreferences sharedPref;
@@ -42,36 +39,20 @@ public class ResponseFragment extends Fragment {
   private SharedPreferences.Editor editor;
   private int tutorialPosition = 0;
   private List<Sandwich> sandwiches;
-  private LiveData<List<Sandwich>> sandwichQuery;
   private Sandwich sandwich;
   private int malingeringCount = 0;
-
-
-  public ResponseFragment() {
-    // empty public constructor
-  }
 
   public static ResponseFragment newInstance() {
     return new ResponseFragment();
   } // Instance needed for several methods and database interactions
 
-
-  @Override
-  public void onAttach(Context context) {
-    super.onAttach(context);
-    sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
-    editor = sharedPref.edit();
-    sandwichQuery = SandyDatabase.getInstance(context).sandwichDao().getAll();
-    sandwichQuery.observe(this, (sandwiches) -> this.sandwiches = sandwiches);
-  }
-
-
   @Override
   public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
       @Nullable Bundle savedInstanceState) {
-    final ResponseViewModel viewModel = ViewModelProviders.of(getActivity())
-        .get(ResponseViewModel.class);
-    final View view = inflater.inflate(R.layout.response_fragment, container, false);
+    viewModel = ViewModelProviders.of(getActivity()).get(ResponseViewModel.class);
+    viewModel.getSandwiches().observe(this, (sandwiches) -> this.sandwiches = sandwiches);
+    View view = inflater.inflate(R.layout.response_fragment, container, false);
+    sharedPref = PreferenceManager.getDefaultSharedPreferences(getContext());
     responseImage = view.findViewById(R.id.captured_sandwich);
     Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.test_image1);
     responseImage.setImageBitmap(bmp);
@@ -251,7 +232,6 @@ public class ResponseFragment extends Fragment {
     if (!sharedPref.getBoolean(getString(R.string.saved_tutorial_complete_key), false)) {
       responseText.setText(R.string.first_screen);
     }
-
     return view;
   }
 
@@ -266,14 +246,6 @@ public class ResponseFragment extends Fragment {
     sandwich.setHumanEat(false);
     viewModel.updateHumanEat(sandwich);
     doTutorial(tutorialPosition++);
-  }
-
-
-  @Override
-  public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-    super.onActivityCreated(savedInstanceState);
-    //  mViewModel = ViewModelProviders.of(this).get(ResponseViewModel.class);
-    // TODO: Use the ViewModel
   }
 
   private String randomTutorialQuestions() {
@@ -314,39 +286,21 @@ public class ResponseFragment extends Fragment {
       snackbarNo14.show();
       sandwich.setHumanEat(false);
       viewModel.updateHumanEat(sandwich);
-      SharedPreferences.Editor editor = sharedPref.edit();
-      editor.putBoolean(getString(R.string.saved_tutorial_complete_key), true);
-      editor.apply();
+      //    SharedPreferences.Editor editor = sharedPref.edit();
+      //     editor.putBoolean(getString(R.string.saved_tutorial_complete_key), true);
+      //     editor.apply();
       tutorialPosition++;
-      viewModel.pruneTutorial().observe(this, (completed) -> {
-        Log.d(getClass().getName(), "Observe prune tutorial" + completed.toString());
-        if (completed) {
-          Log.d(getClass().getName(), "Observe if completed" + completed.toString());
-          viewModel.getSandwichForModel().observe(this, (sandwiches) -> {
-            Log.d(getClass().getName(), "Observe sandwich for model" + sandwiches.toString());
-            ClarifaiService.ClarifaiPutImagesInModel modelMaker = new ClarifaiService.ClarifaiPutImagesInModel();
-            modelMaker.execute(sandwiches.toArray(new Sandwich[0]));
-            Log.d(getClass().getName(), "Observe sandwich for model" + sandwiches.toString());
-          });
+      viewModel.getTrainingSandwiches().observe(this, (sandwiches) -> {
+        if (tutorialPosition > 12) {
+          Log.d(getClass().getName(), "Observe sandwich for model" + sandwiches.toString());
+          ClarifaiService.ClarifaiPutImagesInModel modelMaker = new ClarifaiService.ClarifaiPutImagesInModel();
+          modelMaker.execute(sandwiches.toArray(new Sandwich[0]));
         }
       });
+//      viewModel.pruneTutorial();
     }
     Navigation.findNavController(getActivity(), R.id.nav_host_fragment)
         .navigate(R.id.action_responseFragment_to_sandwichImageFragment);
-  }
-
-
-
-
-
-
-
-  public Boolean getTutorialComplete() {
-    return tutorialComplete;
-  }
-
-  public void setTutorialComplete(Boolean tutorialComplete) {
-    this.tutorialComplete = tutorialComplete;
   }
 
 

@@ -13,6 +13,10 @@ public class AutoFitTextureView extends TextureView {
   private int mRatioWidth = 0;
   private int mRatioHeight = 0;
 
+  /**
+   * @param context This overloaded set of three constructors gives three possible signatures with
+   * which to construct AutoFitTextureView, all of which require Context.
+   */
   public AutoFitTextureView(Context context) {
     this(context, null);
   }
@@ -27,10 +31,10 @@ public class AutoFitTextureView extends TextureView {
 
   /**
    * Sets the aspect ratio for this view. The size of the view will be measured based on the ratio
-   * calculated from the parameters. Note that the actual sizes of parameters don't matter, that
-   * is, calling setAspectRatio(2, 3) and setAspectRatio(4, 6) make the same result.
+   * calculated from the parameters. Note that the actual sizes of parameters don't matter, that is,
+   * calling setAspectRatio(2, 3) and setAspectRatio(4, 6) make the same result.
    *
-   * @param width  Relative horizontal size
+   * @param width Relative horizontal size
    * @param height Relative vertical size
    */
   public void setAspectRatio(int width, int height) {
@@ -42,6 +46,10 @@ public class AutoFitTextureView extends TextureView {
     requestLayout();
   }
 
+  /**
+   * @param widthMeasureSpec this method checks to see if the aspect ratio of te layout fits the
+   * requirements for the camera, if no t sets  them to a specified ratio.
+   */
   @Override
   protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
     super.onMeasure(widthMeasureSpec, heightMeasureSpec);
