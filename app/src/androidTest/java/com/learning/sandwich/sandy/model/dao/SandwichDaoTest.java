@@ -32,7 +32,7 @@ public class SandwichDaoTest {
   //make ststic to change the fact that db is town down after every test
   private static SandyDatabase db;
   private static SandwichDao dao;
-  private static long sandwichId;
+  private long sandwichId;
 
 
   @Rule
@@ -52,7 +52,7 @@ public class SandwichDaoTest {
     sandwich.setSandwichId(101);
     sandwich.setMachineEat(true);
     sandwich.setHumanEat(false);
-    //sandwichId = dao.insert(sandwich);
+//    sandwichId = dao.insert(sandwich);
     assertTrue(sandwichId > 0);
   }
 
